@@ -1,18 +1,25 @@
-// @todo
+// @flow
 import React, { Component } from 'react';
 
-import './index.css';
+const style = {
+  ul: {
+    textAlign: 'left',
+  }
+};
 
 class Receive extends Component {
   props: {
-    receivedMessage: string,
+    receivedMessage: Object,
   };
 
   render() {
     return (
-      <div className="Receive">
-        <h3>Receive</h3>
-        { this.props.receivedMessage }
+      <div>
+        <ul style={style.ul}>
+        { this.props.receivedMessage.map((message, i) => {
+          return <li key={i}><pre>{message}</pre></li>
+        }) }
+        </ul>
       </div>
     );
   }

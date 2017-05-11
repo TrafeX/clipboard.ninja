@@ -5,8 +5,10 @@
   "dependencies": {
     "express": "^4.15.2",
     "log-timestamp": "^0.1.2",
+    "material-ui": "^0.18.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-tap-event-plugin": "^2.0.1",
     "socket.io": "^1.7.3",
     "socket.io-client": "latest",
     "yarn": "^0.23.4"
