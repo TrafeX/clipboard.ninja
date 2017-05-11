@@ -9,14 +9,14 @@ const style = {
 
 class Receive extends Component {
   props: {
-    receivedMessage: Object,
+    receivedMessages: Object,
   };
 
   render() {
     return (
       <div>
         <ul style={style.ul}>
-        { this.props.receivedMessage.map((message, i) => {
+        { this.props.receivedMessages.map((message, i) => {
           return <li key={i}><pre>{message}</pre></li>
         }) }
         </ul>

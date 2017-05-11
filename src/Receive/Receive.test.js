@@ -6,6 +6,6 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Receive
-      receivedMessage='Hello world!'
+      receivedMessages={['Hello', 'World']}
     />, div);
 });

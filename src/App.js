@@ -143,7 +143,7 @@ class App extends Component {
               />
               <CardText>
                 <Receive
-                  receivedMessage={this.state.messages}
+                  receivedMessages={this.state.messages}
                   />
               </CardText>
             </Card>
