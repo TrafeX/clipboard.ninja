@@ -60,7 +60,8 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    this.socket = SocketIOClient('http://172.17.0.220:3001');
+    // @todo: Use environment variable
+    this.socket = SocketIOClient('http://127.0.0.1:3001');
 
     this.socket.on('connect', () => {
       this.setState({

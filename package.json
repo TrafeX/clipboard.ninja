@@ -1,5 +1,5 @@
 {
-  "name": "react-testapp",
+  "name": "clipboard.ninja",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,8 +57,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "server": "node server/index.js",
     "test": "node scripts/test.js --env=jsdom",
-    "server": "node server/index.js"
+    "test-coverage": "node scripts/test.js --coverage --env=jsdom",
+    "lint": "eslint ./src && flow check"
   },
   "jest": {
     "collectCoverageFrom": [

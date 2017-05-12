@@ -28,6 +28,6 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] React Native Android app
 - [ ] Continuous Integration
 - [ ] Continuous Deployment
-- [ ] Docker containers
+- [X] Docker containers
 - [ ] Cleanup used packages and configs
 - [ ] Better tests

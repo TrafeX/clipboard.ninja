@@ -8,6 +8,8 @@ services:
       - "3001:3001"
     volumes:
       - ".:/usr/src/app"
+    networks:
+      - clipboard
 
   frontend:
     depends_on:
@@ -21,3 +23,13 @@ services:
       BACKEND_SERVER: backend
     volumes:
       - ".:/usr/src/app"
+    networks:
+      - clipboard
+
+networks:
+  clipboard:
+    driver: bridge
+    ipam:
+        driver: default
+        config:
+        - subnet: 192.168.87.0/24
