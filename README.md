@@ -26,7 +26,7 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Webpack2
 - [ ] Server side rendering
 - [ ] React Native Android app
-- [ ] Continuous Integration
+- [X] Continuous Integration
 - [ ] Continuous Deployment
 - [X] Docker containers
 - [ ] Cleanup used packages and configs
