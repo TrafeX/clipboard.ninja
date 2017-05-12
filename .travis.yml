@@ -8,6 +8,7 @@ before_install:
   - docker build -t trafex/clipboard-backend -f Dockerfile-backend .
   - docker build -t trafex/clipboard-frontend -f Dockerfile-frontend .
 
+# @todo: Add Flow when https://github.com/facebook/flow/issues/3649 is resolved
 script:
   - docker run --rm trafex/clipboard-frontend yarn lint
   - docker run --rm trafex/clipboard-frontend yarn test-coverage

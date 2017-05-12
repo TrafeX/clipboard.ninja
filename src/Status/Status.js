@@ -12,7 +12,6 @@ class Status extends Component {
   };
 
   render() {
-    console.log(`Status: ${this.props.status}`);
     return (
       <Snackbar
         open={true}
