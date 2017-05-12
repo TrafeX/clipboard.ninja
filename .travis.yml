@@ -22,3 +22,4 @@ deploy:
   skip_cleanup: true
   local_dir: build
   region: "eu-west-1"
+  acl: public_read
