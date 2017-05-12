@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile-backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ".:/usr/src/app"
+
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: ./
+      dockerfile: Dockerfile-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      BACKEND_SERVER: backend
+    volumes:
+      - ".:/usr/src/app"

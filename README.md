@@ -2,8 +2,6 @@
 
 Realtime clipboard to easily and secure share text between computers or mobile devices
 
-See the website [https://clipboard.ninja](https://clipboard.ninja).
-Or download the [Android App in the Play Store](https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja)
 
 ## Features
 
@@ -13,6 +11,23 @@ Or download the [Android App in the Play Store](https://play.google.com/store/ap
  * You can connect multiple receivers to one sender.
  * No registration is needed, a 6 digit number is enough to connect the devices.
 
+## Usage
+
+    docker-compose up
+
+Go to [http://localhost:3000]()
+
 ## Work In Progress
 
 This is a work in progress rebuild of the [orginal clipboard.ninja app](https://github.com/trafex/clipboard), build with React.
+
+### Todo
+
+- [ ] Webpack2
+- [ ] Server side rendering
+- [ ] React Native Android app
+- [ ] Continuous Integration
+- [ ] Continuous Deployment
+- [ ] Docker containers
+- [ ] Cleanup used packages and configs
+- [ ] Better tests

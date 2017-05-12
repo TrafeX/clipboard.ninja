@@ -43,6 +43,10 @@ const style = {
     flexFlow: 'row wrap',
     alignContent: 'flex-start',
   },
+  footer: {
+    color: blueGrey400,
+    margin: 10,
+  },
 };
 
 class App extends Component {
@@ -148,8 +152,8 @@ class App extends Component {
               </CardText>
             </Card>
           </div>
-          <footer>
-            Created by <a href="https://www.trafex.nl">Tim de Pater</a>
+          <footer style={style.footer}>
+            Created by <a href="https://www.trafex.nl">Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja">source on GitHub</a>
           </footer>
         </div>
       </MuiThemeProvider>
