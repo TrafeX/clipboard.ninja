@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker --version
-  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+#  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   - docker build -t trafex/clipboard-backend -f Dockerfile-backend .
   - docker build -t trafex/clipboard-frontend -f Dockerfile-frontend .
 
@@ -14,7 +14,7 @@ script:
   - docker run --rm trafex/clipboard-frontend yarn lint
   - docker run --rm trafex/clipboard-frontend yarn test-coverage
   - docker run --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
-  - docker push trafex/clipboard-backend:latest
+# @todo  - docker push trafex/clipboard-backend:latest
 
 deploy:
   provider: s3
