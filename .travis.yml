@@ -4,8 +4,9 @@ services:
   - docker
 
 before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
   - docker --version
-  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   - docker build -t trafex/clipboard-backend -f Dockerfile-backend .
   - docker build -t trafex/clipboard-frontend -f Dockerfile-frontend .
 
@@ -14,7 +15,9 @@ script:
   - docker run --rm trafex/clipboard-frontend yarn lint
   - docker run --rm trafex/clipboard-frontend yarn test-coverage
   - docker run --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
-  - docker push trafex/clipboard-backend:latest
+  - docker run -d trafex/clipboard-backend
+  - docker run -d trafex/clipboard-frontend
+  - docker ps -a
 
 deploy:
   provider: s3
@@ -25,3 +28,9 @@ deploy:
   local_dir: build
   region: "eu-west-1"
   acl: public_read
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push trafex/clipboard-backend:latest;
+    fi
