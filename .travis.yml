@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker --version
-  - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   - docker build -t trafex/clipboard-backend -f Dockerfile-backend .
   - docker build -t trafex/clipboard-frontend -f Dockerfile-frontend .
 
