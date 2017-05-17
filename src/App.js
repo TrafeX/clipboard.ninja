@@ -60,7 +60,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    this.socket = SocketIOClient(process.env.BACKEND_URL);
+    this.socket = SocketIOClient(process.env.REACT_APP_BACKEND_URL);
 
     this.socket.on('connect', () => {
       this.setState({
