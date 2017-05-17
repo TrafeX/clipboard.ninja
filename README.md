@@ -23,7 +23,7 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 
 ### Todo
 
-- [X] Webpack2
+- [X] Webpack2 (synced with https://github.com/facebookincubator/create-react-app/tree/e7c113eb158a27284fa2fae67b9ab4c6d8ea5cce)
 - [ ] Server side rendering
 - [ ] React Native Android app
 - [X] Continuous Integration

@@ -85,10 +85,7 @@
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "": {
-      "^react-native$": "react-native-web"
-    }
+    ]
   },
   "babel": {
     "presets": [
