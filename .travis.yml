@@ -14,7 +14,7 @@ before_install:
 script:
   - docker run --rm trafex/clipboard-frontend yarn lint
   - docker run --rm trafex/clipboard-frontend yarn test-coverage
-  - docker run --rm -e "BACKEND_URL=http://vps01.trafex.nl:3001" -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
+  - docker run --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
   - docker run -d trafex/clipboard-backend
   - docker run -d trafex/clipboard-frontend
   - docker ps -a

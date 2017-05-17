@@ -23,7 +23,7 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 
 ### Todo
 
-- [ ] Webpack2
+- [X] Webpack2
 - [ ] Server side rendering
 - [ ] React Native Android app
 - [X] Continuous Integration
@@ -32,3 +32,4 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Cleanup used packages and configs
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
 - [ ] Send on ctrl + enter
+- [ ] Dump/simplify create-react-app bootstrap
