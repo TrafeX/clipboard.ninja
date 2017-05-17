@@ -30,4 +30,4 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Continuous Deployment
 - [X] Docker containers
 - [ ] Cleanup used packages and configs
-- [ ] Better tests
+- [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
