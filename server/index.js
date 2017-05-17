@@ -37,6 +37,7 @@ io.on('connection', function(socket){
 
   console.log('User ' + nrUsers + ' registered in room: ' + socket.roomId);
   socket.on('disconnect', function(){
+    // @todo: Notify on disconnect
     // io.to(socket.roomId).emit('sender-disconnected');
     // if (socket.subscribedRoom) {
     //     io.to(roomIds[socket.subscribedRoom]).emit('receiver-disconnected');
@@ -47,7 +48,6 @@ io.on('connection', function(socket){
     console.log('User disconnected from ' + socket.roomId);
   });
   socket.on('publish', function(msg){
-    console.log('Publish to: ' + socket.roomId);
     io.to(socket.roomId).emit('message', msg);
   });
   socket.on('join', function(roomNr){
@@ -56,13 +56,6 @@ io.on('connection', function(socket){
       socket.emit('deviceid-not-exists');
       return;
     }
-    // if (socket.subscribedRoom == 'room-' + room) {
-    //     return;
-    // }
-    // if (socket.subscribedRoom) {
-    //     io.to(roomIds[socket.subscribedRoom]).emit('receiver-disconnected');
-    //     socket.leave(socket.subscribedRoom);
-    // }
 
     socket.roomId = 'room-' + roomNr;
     socket.join(socket.roomId);

@@ -27,7 +27,8 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Server side rendering
 - [ ] React Native Android app
 - [X] Continuous Integration
-- [ ] Continuous Deployment
+- [X] Continuous Deployment
 - [X] Docker containers
 - [ ] Cleanup used packages and configs
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
+- [ ] Send on ctrl + enter
