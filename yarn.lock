@@ -2089,7 +2089,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-react-app@^1.0.0:
+eslint-config-react-app@1.0.0-alpha.e280254d:
   version "1.0.0-alpha.e280254d"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-1.0.0-alpha.e280254d.tgz#c6a1d9e8e6af5324fe5551caf68712434f3c495c"
 
@@ -4799,7 +4799,7 @@ react-addons-transition-group@^15.4.0:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-dev-utils@^1.0.0, react-dev-utils@^1.0.0-alpha.e280254d:
+react-dev-utils@1.0.0-alpha.e280254d, react-dev-utils@^1.0.0-alpha.e280254d:
   version "1.0.0-alpha.e280254d"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-1.0.0-alpha.e280254d.tgz#29af18ff57c14cc85c11e11d54f1d6271cd45d87"
   dependencies:
@@ -4830,7 +4830,7 @@ react-dom@^15.5.4:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
-react-error-overlay@^1.0.0:
+react-error-overlay@1.0.0-alpha.e280254d:
   version "1.0.0-alpha.e280254d"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-1.0.0-alpha.e280254d.tgz#4124eb83638f51bdc865ea27bfcc5116c889e172"
   dependencies:
