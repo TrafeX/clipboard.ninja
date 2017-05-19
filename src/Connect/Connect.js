@@ -24,6 +24,7 @@ class Connect extends Component {
   };
   state: {
     roomNumber: number,
+    spinner: string,
   };
 
   componentDidMount = () => {
