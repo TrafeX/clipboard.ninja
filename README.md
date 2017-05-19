@@ -23,14 +23,16 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 
 ### Todo
 
-- [X] Webpack2 (synced with https://github.com/facebookincubator/create-react-app/tree/e7c113eb158a27284fa2fae67b9ab4c6d8ea5cce)
-- [ ] Server side rendering
+- [X] Webpack2
+- [ ] Server side rendering / generate static html
 - [ ] React Native Android app
 - [X] Continuous Integration
 - [X] Continuous Deployment
 - [X] Docker containers
-- [ ] Cleanup used packages and configs
+- [X] Cleanup used packages and configs
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
 - [ ] Send on ctrl + enter
 - [ ] Dump/simplify create-react-app bootstrap
 - [ ] Seperate the backend server with his own node modules
+- [ ] Show number of connected devices
+- [ ] Add Google Analytics

@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import ninjalogo from './ninja.svg';
 import Send from './Send';
 import Receive from './Receive';
 import Connect from './Connect';
@@ -113,10 +114,12 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
+
           <AppBar
             title="Clipboard.ninja"
+            iconElementLeft={<img src={ninjalogo} alt="logo" height="50px" />}
             iconClassNameRight="muidocs-icon-navigation-expand-more"
-            showMenuIconButton={false}
+            showMenuIconButton={true}
           />
           <Status
             status={this.state.status}
@@ -143,7 +146,7 @@ class App extends Component {
             <Card style={style.cardRight}>
               <CardTitle
                 title="Receive"
-                subtitle="When connected the text of the other device will be shown here"
+                subtitle="The text of the other device will be shown here"
               />
               <CardText>
                 <Receive

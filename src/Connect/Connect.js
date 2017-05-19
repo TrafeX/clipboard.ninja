@@ -41,18 +41,23 @@ class Connect extends Component {
     if (this.props.connectedToRoom !== '') {
       return null;
     }
+
+    let ownRoomNumber = this.props.ownRoomNumber;
+    if (ownRoomNumber === -1) {
+      ownRoomNumber = 'Waiting for server connection..';
+    }
     return (
       <div>
         <h3>
           Device ID:&nbsp;
           <span style={{color: this.props.muiTheme.palette.accent1Color}}>
             <strong>
-              {this.props.ownRoomNumber}
+              {ownRoomNumber}
             </strong>
           </span>
         </h3>
         <p>
-          Use this Device ID to connect to the other device.<br />
+          Use the above Device ID to connect to the other device.<br />
           Or enter the Device ID of the other device below.
         </p>
         <TextField
