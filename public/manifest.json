@@ -1,0 +1,24 @@
+{
+  "name": "Clipboard.ninja",
+  "short_name": "Clipboard.ninja",
+  "start_url": "./?m",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#2b3e50",
+  "description": "Realtime clipboard to easily and secure share text between computers or mobile devices",
+  "icons": [{
+    "src": "ninja16.png",
+    "sizes": "16x16",
+    "type": "image/png"
+  }, {
+    "src": "ninja80.png",
+    "sizes": "80x80",
+    "type": "image/png"
+  }],
+  "related_applications": [{
+    "platform": "web"
+  }, {
+    "platform": "play",
+    "url": "https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+  }]
+}
