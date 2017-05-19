@@ -33,3 +33,4 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
 - [ ] Send on ctrl + enter
 - [ ] Dump/simplify create-react-app bootstrap
+- [ ] Seperate the backend server with his own node modules

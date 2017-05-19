@@ -8,7 +8,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
-// const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
@@ -84,18 +84,19 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     extensions: ['.js', '.json', '.jsx'],
     alias: {
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
     },
-    // plugins: [
+    plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-    //   new ModuleScopePlugin(paths.appSrc),
-    // ],
+      new ModuleScopePlugin(paths.appSrc),
+    ],
   },
   module: {
     strictExportPresence: true,
@@ -113,6 +114,7 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -120,10 +122,10 @@ module.exports = {
         include: paths.appSrc,
       },
       // ** ADDING/UPDATING LOADERS **
-      // The "url" loader handles all assets unless explicitly excluded.
+      // The "file" loader handles all assets unless explicitly excluded.
       // The `exclude` list *must* be updated with every change to loader extensions.
       // When adding a new loader, you must add its `test`
-      // as a new entry in the `exclude` list for "url" loader.
+      // as a new entry in the `exclude` list for "file" loader.
 
       // "file" loader makes sure those assets get served by WebpackDevServer.
       // When you `import` an asset, you get its (virtual) filename.
@@ -161,6 +163,7 @@ module.exports = {
         include: paths.appSrc,
         loader: require.resolve('babel-loader'),
         options: {
+
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
@@ -203,7 +206,7 @@ module.exports = {
         ],
       },
       // ** STOP ** Are you adding a new loader?
-      // Remember to add the new extension(s) to the "url" loader exclusion list.
+      // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],
   },
   plugins: [
@@ -231,6 +234,12 @@ module.exports = {
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+    // Moment.js is an extremely popular library that bundles large locale files
+    // by default due to how Webpack interprets its code. This is a practical
+    // solution that requires the user to opt into importing specific locales.
+    // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
+    // You can remove this if you don't use Moment.js:
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
