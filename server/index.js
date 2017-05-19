@@ -19,8 +19,6 @@ function randomInt(low, high) {
   return number;
 }
 
-app.use(express.static(__dirname + '/web'));
-
 io.on('connection', function(socket){
 
   socket.roomNr = randomInt(100000, 999999);
@@ -64,6 +62,7 @@ io.on('connection', function(socket){
   });
 });
 
+// @todo: Handle SSL? https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
 http.listen(3001, function(){
   console.log('Listening on *:3001');
 });

@@ -4112,6 +4112,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+most-awesome-spinner-ever@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/most-awesome-spinner-ever/-/most-awesome-spinner-ever-1.0.0.tgz#831d2d9960ffcc5eaad7f096a722f105b81fa79f"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import muiThemeable from 'material-ui/styles/muiThemeable';
+import spinner from 'most-awesome-spinner-ever';
 
 const style = {
   button: {
@@ -19,9 +20,18 @@ class Connect extends Component {
   };
   state = {
     roomNumber: '',
+    spinner: '',
   };
   state: {
     roomNumber: number,
+  };
+
+  componentDidMount = () => {
+    spinner((char) => {
+      this.setState({
+        spinner: char,
+      }
+    )}, 200);
   };
 
   connectToRoom = () => {
@@ -44,7 +54,7 @@ class Connect extends Component {
 
     let ownRoomNumber = this.props.ownRoomNumber;
     if (ownRoomNumber === -1) {
-      ownRoomNumber = 'Waiting for server connection..';
+      ownRoomNumber = `Waiting for server connection.. ${this.state.spinner}`;
     }
     return (
       <div>
