@@ -57,7 +57,7 @@ class App extends Component {
     messages: [],
     ownRoomNumber: -1,
     connectedToRoom: '',
-    status: 'Connecting..',
+    status: '',
   };
 
   componentDidMount = () => {

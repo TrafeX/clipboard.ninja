@@ -8,7 +8,7 @@ class Status extends Component {
   };
 
   shouldComponentUpdate = (nextProps: Object) => {
-    return nextProps.status !== this.props.status;
+    return nextProps.status !== '' && nextProps.status !== this.props.status;
   };
 
   render() {

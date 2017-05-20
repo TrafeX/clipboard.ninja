@@ -20,7 +20,7 @@ class Connect extends Component {
   };
   state = {
     roomNumber: '',
-    spinner: ' ',
+    spinner: '⠋',
   };
   state: {
     roomNumber: number,
