@@ -20,7 +20,7 @@ class Connect extends Component {
   };
   state = {
     roomNumber: '',
-    spinner: '',
+    spinner: ' ',
   };
   state: {
     roomNumber: number,
@@ -53,6 +53,7 @@ class Connect extends Component {
       return null;
     }
 
+    // @todo: Add spacing between first 3 and last 3 numbers
     let ownRoomNumber = this.props.ownRoomNumber;
     if (ownRoomNumber === -1) {
       ownRoomNumber = `Waiting for server connection.. ${this.state.spinner}`;
