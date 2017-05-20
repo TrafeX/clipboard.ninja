@@ -118,8 +118,6 @@ class App extends Component {
           <AppBar
             title="Clipboard.ninja"
             iconElementLeft={<img src={ninjalogo} alt="logo" height="50px" />}
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
-            showMenuIconButton={true}
           />
           <Status
             status={this.state.status}

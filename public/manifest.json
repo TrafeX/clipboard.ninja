@@ -1,6 +1,6 @@
 {
   "name": "Clipboard.ninja",
-  "short_name": "Clipboard.ninja",
+  "short_name": "Clipboard.n",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fff",
@@ -25,6 +25,14 @@
   }, {
     "src": "ninja500.png",
     "sizes": "500x500",
+    "type": "image/png"
+  }, {
+    "src": "ninja512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }, {
+    "src": "ninja800.png",
+    "sizes": "800x800",
     "type": "image/png"
   }],
   "related_applications": [{
