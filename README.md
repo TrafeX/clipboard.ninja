@@ -36,4 +36,4 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Seperate the backend server with his own node modules
 - [ ] Show number of connected devices
 - [ ] Add Google Analytics
-- [ ] Cache busting for files defined in index.html
+- [ ] Cache busting via webpack for files defined in index.html
