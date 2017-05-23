@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import ninjalogo from './ninja.svg';
+import manifest from './manifest.json';
 import Send from './Send';
 import Receive from './Receive';
 import Connect from './Connect';
@@ -12,6 +13,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import {Card, CardTitle, CardText} from 'material-ui/Card';
+import {Helmet} from "react-helmet";
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -114,6 +116,9 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
+          <Helmet>
+            <link rel="manifest" href={manifest} />
+          </Helmet>
 
           <AppBar
             title="Clipboard.ninja"
