@@ -37,4 +37,4 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] ~~Dump/simplify create-react-app bootstrap~~
 - [ ] Seperate the backend server with his own node modules
 - [ ] Show number of connected devices
-- [ ] Add Google Analytics
+- [X] Add Google Analytics

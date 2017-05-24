@@ -14,6 +14,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 import {Helmet} from "react-helmet";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -106,10 +109,18 @@ class App extends Component {
 
   sendMessage = (message: string) => {
     this.socket.emit('publish', message);
+    ReactGA.event({
+      category: 'user-interaction',
+      action: 'publish-message'
+    });
   };
 
   connectToRoom = (room: string) => {
     this.socket.emit('join', room);
+    ReactGA.event({
+      category: 'user-interaction',
+      action: 'connect-to-device'
+    });
   };
 
   render() {

@@ -77,6 +77,7 @@ class Connect extends Component {
           floatingLabelText="Enter the device ID"
           value={this.state.roomNumber}
           onChange={this.handleChange}
+          disabled={this.props.ownRoomNumber === -1}
         />
         <RaisedButton
             label="Connect"
