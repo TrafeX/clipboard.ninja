@@ -31,10 +31,10 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [X] Docker containers
 - [X] Cleanup used packages and configs
 - [ ] Cache busting via webpack for files defined in index.html with react-helmet
-- [ ] Generate favicons with favicons-webpack-plugin
+- [ ] ~~Generate favicons with favicons-webpack-plugin~~
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
 - [ ] Send on ctrl + enter
-- [ ] Dump/simplify create-react-app bootstrap
+- [ ] ~~Dump/simplify create-react-app bootstrap~~
 - [ ] Seperate the backend server with his own node modules
 - [ ] Show number of connected devices
 - [ ] Add Google Analytics
