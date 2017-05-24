@@ -53,7 +53,6 @@ class Connect extends Component {
       return null;
     }
 
-    // @todo: Add spacing between first 3 and last 3 numbers
     let ownRoomNumber = this.props.ownRoomNumber;
     if (ownRoomNumber === -1) {
       ownRoomNumber = `Waiting for server connection.. ${this.state.spinner}`;
@@ -69,7 +68,7 @@ class Connect extends Component {
           </span>
         </h3>
         <p>
-          Use the above Device ID to connect to the other device.<br />
+          Use the Device ID above to connect to the other device.<br />
           Or enter the Device ID of the other device below.
         </p>
         <TextField

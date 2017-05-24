@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#2b3e50",
-  "description": "Realtime clipboard to easily and secure share text between computers or mobile devices",
+  "description": "Real-time clipboard to quickly and securely share text between different (mobile) devices",
   "icons": [{
     "src": "ninja16.png",
     "sizes": "16x16",
