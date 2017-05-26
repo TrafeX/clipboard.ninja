@@ -55,7 +55,10 @@ io.on('connection', function(socket){
       socket.emit('deviceid-not-exists');
       return;
     }
+    // Leave current room
+    roomIds[socket.roomId]--;
 
+    // Join new room
     socket.roomId = 'room-' + roomNr;
     socket.join(socket.roomId);
     roomIds[socket.roomId]++;
