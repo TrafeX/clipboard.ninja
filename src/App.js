@@ -98,6 +98,7 @@ class App extends Component {
     this.socket.on('subscribed', (room: number, usersInRoom: number) => {
       this.setState({
         status: `Connected to device with ID ${room}`,
+        ownRoomNumber: room,
         connectedToRoom: room,
         usersInRoom: usersInRoom,
       });
