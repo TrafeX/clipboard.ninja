@@ -30,18 +30,19 @@ io.on('connection', function(socket){
   socket.join(socket.roomId);
   socket.emit('registered', socket.roomNr);
 
-  roomIds[socket.roomId] = socket.roomNr;
+  roomIds[socket.roomId] = 1;
   ++nrUsers;
 
   console.log('User ' + nrUsers + ' registered in room: ' + socket.roomId);
-  socket.on('disconnect', function(){
-    // @todo: Notify on disconnect
-    // io.to(socket.roomId).emit('sender-disconnected');
-    // if (socket.subscribedRoom) {
-    //     io.to(roomIds[socket.subscribedRoom]).emit('receiver-disconnected');
-    // }
+  socket.on('disconnect', function() {
 
-    delete roomIds[socket.roomId];
+    roomIds[socket.roomId]--;
+    io.to(socket.roomId).emit('unsubscribed', roomIds[socket.roomId]);
+
+    if (roomIds[socket.roomId] <= 0) {
+      // Nobody in the room anymore, delete it
+      delete roomIds[socket.roomId];
+    }
     --nrUsers;
     console.log('User disconnected from ' + socket.roomId);
   });
@@ -57,12 +58,13 @@ io.on('connection', function(socket){
 
     socket.roomId = 'room-' + roomNr;
     socket.join(socket.roomId);
-    io.to(socket.roomId).emit('subscribed', roomNr);
+    roomIds[socket.roomId]++;
+
+    io.to(socket.roomId).emit('subscribed', roomNr, roomIds[socket.roomId]);
     console.log('User in ' + socket.roomId + ' joins ' + socket.roomId);
   });
 });
 
-// @todo: Handle SSL? https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
 http.listen(3001, function(){
   console.log('Listening on *:3001');
 });

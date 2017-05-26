@@ -13,8 +13,8 @@ const style = {
 
 class Connect extends Component {
   props: {
-    ownRoomNumber: number,
-    connectedToRoom: string,
+    ownRoomNumber: ?number,
+    connectedToRoom: ?number,
     connectToRoom: (number) => void,
     muiTheme: Object,
   };
@@ -28,6 +28,7 @@ class Connect extends Component {
   };
 
   componentDidMount = () => {
+    // @todo: Stop spinner when not visible anymore
     spinner((char) => {
       this.setState({
         spinner: char,
@@ -49,12 +50,12 @@ class Connect extends Component {
   };
 
   render() {
-    if (this.props.connectedToRoom !== '') {
+    if (this.props.connectedToRoom !== null) {
       return null;
     }
 
     let ownRoomNumber = this.props.ownRoomNumber;
-    if (ownRoomNumber === -1) {
+    if (ownRoomNumber === null) {
       ownRoomNumber = `Waiting for server connection.. ${this.state.spinner}`;
     }
     return (
@@ -76,14 +77,14 @@ class Connect extends Component {
           floatingLabelText="Enter the device ID"
           value={this.state.roomNumber}
           onChange={this.handleChange}
-          disabled={this.props.ownRoomNumber === -1}
+          disabled={this.props.ownRoomNumber === null}
         />
         <RaisedButton
             label="Connect"
             primary={true}
             style={style.button}
             onClick={() => this.connectToRoom()}
-            disabled={this.state.roomNumber === ''}
+            disabled={this.state.roomNumber === null}
           />
       </div>
     );

@@ -16,7 +16,8 @@ const style = {
 class Send extends Component {
   props: {
     sendMessage: (string) => void,
-    connectedToRoom: string,
+    connectedToRoom: ?number,
+    usersInRoom: number,
     muiTheme: Object,
   };
   state = {
@@ -37,8 +38,12 @@ class Send extends Component {
   };
 
   render() {
-    if (this.props.connectedToRoom === '') {
+    if (this.props.connectedToRoom === null) {
       return null;
+    }
+    let moreUsersInRoom = null;
+    if (this.props.usersInRoom > 2) {
+      moreUsersInRoom =  ` with ${this.props.usersInRoom-1} devices`;
     }
     return (
       <div>
@@ -49,6 +54,7 @@ class Send extends Component {
               {this.props.connectedToRoom}
             </strong>
           </span>
+          {moreUsersInRoom}
         </h3>
         <TextField
           floatingLabelText="Enter text to send to the receiver"

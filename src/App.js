@@ -60,26 +60,29 @@ class App extends Component {
 
   state = {
     messages: [],
-    ownRoomNumber: -1,
-    connectedToRoom: '',
+    ownRoomNumber: null,
+    connectedToRoom: null,
     status: '',
+    usersInRoom: 0,
+  };
+  state: {
+    messages: Array<string>,
+    ownRoomNumber: ?number,
+    connectedToRoom: ?number,
+    status: string,
+    usersInRoom: number,
   };
 
   componentDidMount = () => {
     this.socket = SocketIOClient(process.env.REACT_APP_BACKEND_URL);
 
-    this.socket.on('connect', () => {
-      this.setState({
-        status: 'Connected to server',
-      })
-    });
     this.socket.on('connect_error', () => {
       this.setState({
         status: 'Connection to server failed',
-        ownRoomNumber: -1,
+        ownRoomNumber: null,
       })
     });
-    this.socket.on('message', (message) => {
+    this.socket.on('message', (message: string) => {
       const msgs = this.state.messages;
       msgs.unshift(message);
 
@@ -87,21 +90,35 @@ class App extends Component {
         messages: msgs,
       });
     });
-    this.socket.on('registered', (room) => {
+    this.socket.on('registered', (room: number) => {
       this.setState({
         ownRoomNumber: room,
       });
     });
-    this.socket.on('subscribed', (room) => {
+    this.socket.on('subscribed', (room: number, usersInRoom: number) => {
       this.setState({
         status: `Connected to device with ID ${room}`,
         connectedToRoom: room,
+        usersInRoom: usersInRoom,
+      });
+    });
+    this.socket.on('unsubscribed', (usersInRoom: number) => {
+      if (usersInRoom <= 1) {
+        // Only one left in room
+        this.setState({
+          status: 'Other device is gone',
+          connectedToRoom: null,
+          usersInRoom: usersInRoom,
+        });
+      }
+      this.setState({
+        usersInRoom: usersInRoom,
       });
     });
     this.socket.on('deviceid-not-exists', () => {
       this.setState({
         status: 'Device ID doesn\'t exists. Enter the device ID of the other device',
-        connectedToRoom: '',
+        connectedToRoom: null,
         // @todo: Trigger error on Connect input element
       });
     });
@@ -115,7 +132,7 @@ class App extends Component {
     });
   };
 
-  connectToRoom = (room: string) => {
+  connectToRoom = (room: ?number) => {
     this.socket.emit('join', room);
     ReactGA.event({
       category: 'user-interaction',
@@ -154,6 +171,7 @@ class App extends Component {
                 <Send
                   connectedToRoom={this.state.connectedToRoom}
                   sendMessage={this.sendMessage}
+                  usersInRoom={this.state.usersInRoom}
                   />
               </CardText>
             </Card>
