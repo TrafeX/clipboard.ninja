@@ -9,7 +9,7 @@ const style = {
 
 class Receive extends Component {
   props: {
-    receivedMessages: Object,
+    receivedMessages: Array<string>,
   };
 
   render() {

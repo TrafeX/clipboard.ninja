@@ -15,7 +15,7 @@ const InfoTabs = () => (
     <Tab label="Howto">
       <div>
         <ul>
-          <li>Open this website on both devices</li>
+          <li>Open this app on both devices</li>
           <li>Enter the device ID from the other device and press connect</li>
           <li>Type or paste the text you want to send</li>
           <li>See the text immediately appear on the other device after pressing 'send'</li>

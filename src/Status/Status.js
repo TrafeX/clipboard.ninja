@@ -19,7 +19,7 @@ class Status extends Component {
       <Snackbar
         open={true}
         message={this.props.status}
-        autoHideDuration={3000}
+        autoHideDuration={4000}
       />
     );
   }

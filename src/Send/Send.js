@@ -56,6 +56,10 @@ class Send extends Component {
           </span>
           {moreUsersInRoom}
         </h3>
+        <p>
+          You're connected to the other device(s) and can start sending text!<br />
+          It's possible to send to multiple devices by also connecting them to the Device Id above.
+        </p>
         <TextField
           floatingLabelText="Enter text to send to the receiver"
           multiLine={true}

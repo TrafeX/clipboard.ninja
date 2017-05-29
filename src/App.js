@@ -53,6 +53,9 @@ const style = {
     color: blueGrey400,
     margin: 10,
   },
+  a: {
+    color: blueGrey400,
+  },
 };
 
 class App extends Component {
@@ -107,7 +110,7 @@ class App extends Component {
       if (usersInRoom <= 1) {
         // Only one left in room
         this.setState({
-          status: 'Other device is gone',
+          status: 'The other device is gone',
           connectedToRoom: null,
           usersInRoom: usersInRoom,
         });
@@ -148,7 +151,6 @@ class App extends Component {
           <Helmet>
             <link rel="manifest" href={manifest} />
           </Helmet>
-
           <AppBar
             title="Clipboard.ninja"
             iconElementLeft={<img src={ninjalogo} alt="logo" height="50px" />}
@@ -178,9 +180,9 @@ class App extends Component {
             </Card>
             <Card style={style.cardRight}>
               <CardTitle
-                title="Receive"
-                subtitle="The text of the other device will be shown here"
-              />
+                title="Received text"
+                subtitle="The text you send to and receive from the other device will be shown here"
+                />
               <CardText>
                 <Receive
                   receivedMessages={this.state.messages}
@@ -189,7 +191,7 @@ class App extends Component {
             </Card>
           </div>
           <footer style={style.footer}>
-            Created by <a href="https://www.trafex.nl">Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja">source on GitHub</a>
+            Created by <a href="https://www.trafex.nl" style={style.a}>Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja" style={style.a}>source on GitHub</a>
           </footer>
         </div>
       </MuiThemeProvider>
