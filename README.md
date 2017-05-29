@@ -38,3 +38,4 @@ This is a work in progress rebuild of the [orginal clipboard.ninja app](https://
 - [ ] Seperate the backend server with his own node modules
 - [X] Show number of connected devices
 - [X] Add Google Analytics
+- [ ] Set correct Cache-Control headers on static files
