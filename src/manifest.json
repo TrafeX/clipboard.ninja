@@ -1,37 +1,37 @@
 {
   "name": "Clipboard.ninja",
   "short_name": "Clipboard.n",
-  "start_url": "./index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#2b3e50",
   "description": "Real-time clipboard to quickly and securely share text between different (mobile) devices",
   "icons": [{
-    "src": "ninja16.png",
+    "src": "/ninja16.png",
     "sizes": "16x16",
     "type": "image/png"
   }, {
-    "src": "ninja80.png",
+    "src": "/ninja80.png",
     "sizes": "80x80",
     "type": "image/png"
   }, {
-    "src": "ninja144.png",
+    "src": "/ninja144.png",
     "sizes": "144x144",
     "type": "image/png"
   }, {
-    "src": "ninja192.png",
+    "src": "/ninja192.png",
     "sizes": "192x192",
     "type": "image/png"
   }, {
-    "src": "ninja500.png",
+    "src": "/ninja500.png",
     "sizes": "500x500",
     "type": "image/png"
   }, {
-    "src": "ninja512.png",
+    "src": "/ninja512.png",
     "sizes": "512x512",
     "type": "image/png"
   }, {
-    "src": "ninja800.png",
+    "src": "/ninja800.png",
     "sizes": "800x800",
     "type": "image/png"
   }],
