@@ -77,6 +77,8 @@ class App extends Component {
   };
 
   componentDidMount = () => {
+    ReactGA.pageview('/');
+
     this.socket = SocketIOClient(process.env.REACT_APP_BACKEND_URL);
 
     this.socket.on('connect_error', () => {

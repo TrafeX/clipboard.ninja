@@ -1,7 +1,7 @@
 {
   "name": "Clipboard.ninja",
   "short_name": "Clipboard.n",
-  "start_url": "/index.html",
+  "start_url": "/index.html?utm_source=webapp_manifest",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#2b3e50",
