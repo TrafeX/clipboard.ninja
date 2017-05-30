@@ -38,4 +38,4 @@ This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex
 - [ ] Seperate the backend server with his own node modules
 - [X] Show number of connected devices
 - [X] Add Google Analytics
-- [ ] Set correct Cache-Control headers on static files
+- [X] Set correct Cache-Control headers on static files
