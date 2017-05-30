@@ -20,14 +20,25 @@ script:
   - docker ps -a
 
 deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: "clipboard.ninja"
-  skip_cleanup: true
-  local_dir: build
-  region: "eu-west-1"
-  acl: public_read
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: "clipboard.ninja"
+    skip_cleanup: true
+    local_dir: build
+    region: "eu-west-1"
+    acl: public_read
+  # Upload static files again, but now with the correct cache-control header
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: "clipboard.ninja"
+    skip_cleanup: true
+    local_dir: build/static
+    upload-dir: static
+    region: "eu-west-1"
+    acl: public_read
+    cache_control: "max-age=31536000"
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
