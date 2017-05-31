@@ -45,8 +45,8 @@ const App = () => (
       </Helmet>
       <AppHeader/>
       <Switch>
-        <Route exact path='/' component={withTracker(Clipboard)}/>
-        <Route path='/about.html' component={withTracker(About)}/>
+        <Route exact path={['/', '/index.html']} component={withTracker(Clipboard)}/>
+        <Route path="/about.html" component={withTracker(About)}/>
       </Switch>
       <footer style={style.footer}>
         Created by <a href="https://www.trafex.nl" style={style.a}>Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja" style={style.a}>source on GitHub</a>
