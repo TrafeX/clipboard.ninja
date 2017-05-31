@@ -11,8 +11,8 @@ class AppHeader extends Component {
   };
 
   render() {
-    let navButton = <FlatButton label="Help" onTouchTap={() => this.props.history.push('/about')} />;
-    if (this.props.location.pathname === '/about') {
+    let navButton = <FlatButton label="Help" onTouchTap={() => this.props.history.push('/about.html')} />;
+    if (this.props.location.pathname === '/about.html') {
       navButton = <FlatButton label="Back" onTouchTap={() => this.props.history.push('/')} />;
     }
     return (
@@ -21,6 +21,7 @@ class AppHeader extends Component {
           title="Clipboard.ninja"
           iconElementLeft={<img src={ninjalogo} alt="logo" height="50px" />}
           iconElementRight={navButton}
+          onTitleTouchTap={() => this.props.history.push('/')}
         />
       </div>
     );

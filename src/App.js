@@ -23,12 +23,12 @@ const muiTheme = getMuiTheme({
 
 const style = {
   footer: {
-    color: 'white',
+    color: blueGrey400,
     margin: 10,
     paddingLeft: 10,
   },
   a: {
-    color: 'white',
+    color: blueGrey400,
   },
   background: {
     backgroundColor: blueGrey400,
@@ -37,26 +37,22 @@ const style = {
   }
 };
 
-class App extends Component {
-  render() {
-    return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <div style={style.background}>
-          <Helmet>
-            <link rel="manifest" href={manifest} />
-          </Helmet>
-          <AppHeader/>
-          <Switch>
-            <Route exact path='/' component={withTracker(Clipboard)}/>
-            <Route path='/about' component={withTracker(About)}/>
-          </Switch>
-          <footer style={style.footer}>
-            Created by <a href="https://www.trafex.nl" style={style.a}>Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja" style={style.a}>source on GitHub</a>
-          </footer>
-        </div>
-      </MuiThemeProvider>
-    );
-  }
-}
+const App = () => (
+  <MuiThemeProvider muiTheme={muiTheme}>
+    <div style={style.background}>
+      <Helmet>
+        <link rel="manifest" href={manifest} />
+      </Helmet>
+      <AppHeader/>
+      <Switch>
+        <Route exact path='/' component={withTracker(Clipboard)}/>
+        <Route path='/about.html' component={withTracker(About)}/>
+      </Switch>
+      <footer style={style.footer}>
+        Created by <a href="https://www.trafex.nl" style={style.a}>Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja" style={style.a}>source on GitHub</a>
+      </footer>
+    </div>
+  </MuiThemeProvider>
+);
 
 export default App;

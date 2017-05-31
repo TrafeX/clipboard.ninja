@@ -25,6 +25,7 @@ Go to [http://localhost:3000]()
 
 This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex/clipboard), build with React.
 
+- [ ] Find a way to leave .html out of the urls and still be able to use static webhosting on S3
 - [ ] Cache busting via webpack for files defined in index.html with react-helmet
 - [ ] React Native Android app
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
