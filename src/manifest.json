@@ -1,7 +1,7 @@
 {
   "name": "Clipboard.ninja",
   "short_name": "Clipboard.n",
-  "start_url": "/index.html?utm_source=webapp_manifest",
+  "start_url": "/index.html?utm_source=homescreen_app",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#2b3e50",
@@ -9,6 +9,14 @@
   "icons": [{
     "src": "/ninja16.png",
     "sizes": "16x16",
+    "type": "image/png"
+  }, {
+    "src": "/ninja48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "/ninja72.png",
+    "sizes": "72x72",
     "type": "image/png"
   }, {
     "src": "/ninja80.png",
@@ -21,10 +29,6 @@
   }, {
     "src": "/ninja192.png",
     "sizes": "192x192",
-    "type": "image/png"
-  }, {
-    "src": "/ninja500.png",
-    "sizes": "500x500",
     "type": "image/png"
   }, {
     "src": "/ninja512.png",

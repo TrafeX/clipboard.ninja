@@ -16,7 +16,11 @@ import {Card, CardTitle, CardText} from 'material-ui/Card';
 import {Helmet} from "react-helmet";
 import ReactGA from 'react-ga';
 
-ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
+  gaOptions: {
+    siteSpeedSampleRate: 10
+  }
+});
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -35,14 +39,14 @@ const style = {
     flexFlow: 'row wrap'
   },
   cardLeft: {
-    flex: 1,
+    flex: '1 1 400px',
     textAlign: 'center',
     margin: 10,
   },
   cardRight: {
-    flex: 1,
+    flex: '1 1 400px',
     textAlign: 'center',
-    margin: 10
+    margin: 10,
   },
   tabs: {
     display: 'flex',
