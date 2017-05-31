@@ -103,7 +103,7 @@
   },
   "reactSnapshot": {
     "include": [
-      "/about"
+      "/about.html"
     ]
   }
 }
