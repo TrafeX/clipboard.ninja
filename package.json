@@ -10,6 +10,7 @@
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",
     "react-helmet": "^5.1.3",
+    "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "socket.io": "^2.0.1",
     "socket.io-client": "^2.0.1"
@@ -99,5 +100,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "reactSnapshot": {
+    "include": [
+      "/about"
+    ]
   }
 }

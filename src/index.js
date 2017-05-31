@@ -3,6 +3,11 @@ import { render } from 'react-snapshot';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import {BrowserRouter} from 'react-router-dom';
 
-render(<App />, document.getElementById('root'));
+render((
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+), document.getElementById('root'));
 registerServiceWorker();

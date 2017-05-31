@@ -3,8 +3,8 @@
   "short_name": "Clipboard.n",
   "start_url": "/index.html?utm_source=homescreen_app",
   "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#2b3e50",
+  "background_color": "#78909c",
+  "theme_color": "#fb8c00",
   "description": "Real-time clipboard to quickly and securely share text between different (mobile) devices",
   "icons": [{
     "src": "/ninja16.png",

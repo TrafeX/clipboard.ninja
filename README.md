@@ -25,17 +25,18 @@ Go to [http://localhost:3000]()
 
 This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex/clipboard), build with React.
 
+- [ ] Cache busting via webpack for files defined in index.html with react-helmet
+- [ ] React Native Android app
+- [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
+- [ ] Send on ctrl + enter
+- [ ] Seperate the backend server with his own node modules
+- [X] Add React router to create a seperate about page
 - [X] Webpack2
 - [X] Server side rendering / generate static html
 - [X] Continuous Integration
 - [X] Continuous Deployment
 - [X] Docker containers
 - [X] Cleanup used packages and configs
-- [ ] React Native Android app
-- [ ] Cache busting via webpack for files defined in index.html with react-helmet
-- [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
-- [ ] Send on ctrl + enter
-- [ ] Seperate the backend server with his own node modules
 - [X] Show number of connected devices
 - [X] Add Google Analytics
 - [X] Set correct Cache-Control headers on static files

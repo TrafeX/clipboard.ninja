@@ -58,10 +58,10 @@ class Send extends Component {
         </h3>
         <p>
           You're connected to the other device(s) and can start sending text!<br />
-          It's possible to send to multiple devices by also connecting them to the Device Id above.
+          <small>It's possible to send to multiple devices by also connecting them to the Device Id above.</small>
         </p>
         <TextField
-          floatingLabelText="Enter text to send to the receiver"
+          floatingLabelText="Enter the text to send"
           multiLine={true}
           rows={1}
           value={this.state.message}

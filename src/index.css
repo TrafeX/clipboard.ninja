@@ -4,3 +4,28 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  padding-top: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

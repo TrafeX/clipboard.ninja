@@ -21,19 +21,27 @@ class Connect extends Component {
   state = {
     roomNumber: '',
     spinner: '',
+    spinnerId: null,
   };
   state: {
     roomNumber: number,
     spinner: string,
+    spinnerId: number,
   };
 
   componentDidMount = () => {
     // @todo: Stop spinner when not visible anymore
-    spinner((char) => {
-      this.setState({
-        spinner: char,
-      }
-    )}, 200);
+    this.setState({
+      spinnerId: spinner((char) => {
+        this.setState({
+            spinner: char,
+          }
+        )}, 200)
+    })
+  };
+
+  componentWillUnmount = () => {
+    clearInterval(this.state.spinnerId);
   };
 
   connectToRoom = () => {
@@ -69,7 +77,7 @@ class Connect extends Component {
           </span>
         </h3>
         <p>
-          Use the Device ID above to connect to the other device.<br />
+          Use the Device ID above to connect to the other device.
           Or enter the Device ID of the other device below.
         </p>
         <TextField
@@ -80,12 +88,12 @@ class Connect extends Component {
           disabled={this.props.ownRoomNumber === null}
         />
         <RaisedButton
-            label="Connect"
-            primary={true}
-            style={style.button}
-            onClick={() => this.connectToRoom()}
-            disabled={this.state.roomNumber === null}
-          />
+          label="Connect"
+          primary={true}
+          style={style.button}
+          onClick={() => this.connectToRoom()}
+          disabled={this.state.roomNumber === null}
+        />
       </div>
     );
   }
