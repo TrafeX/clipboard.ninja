@@ -11,9 +11,15 @@ class AppHeader extends Component {
   };
 
   render() {
-    let navButton = <FlatButton label="Help" href="/about.html" onTouchTap={() => this.props.history.push('/about.html')} />;
+    let navButton = <FlatButton label="Help" href="/about.html" onClick={(e) => {
+      e.preventDefault();
+      this.props.history.push('/about.html');
+    }} />;
     if (this.props.location.pathname === '/about.html') {
-      navButton = <FlatButton label="Back" href="/" onTouchTap={() => this.props.history.push('/')} />;
+      navButton = <FlatButton label="Back" href="/" onClick={(e) => {
+        e.preventDefault();
+        this.props.history.push('/');
+      }} />;
     }
     return (
       <div>

@@ -100,10 +100,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "reactSnapshot": {
-    "include": [
-      "/about.html"
-    ]
   }
 }

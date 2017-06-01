@@ -45,7 +45,8 @@ const App = () => (
       </Helmet>
       <AppHeader/>
       <Switch>
-        <Route exact path={['/', '/index.html']} component={withTracker(Clipboard)}/>
+        <Route exact path="/" component={withTracker(Clipboard)}/>
+        <Route path="/index.html" component={withTracker(Clipboard)}/>
         <Route path="/about.html" component={withTracker(About)}/>
       </Switch>
       <footer style={style.footer}>
