@@ -9,12 +9,20 @@ body {
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-  padding-top: 40px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 330px) {
+  .container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 400px) {
   .container {
     padding-top: 30px;
     padding-left: 20px;
@@ -22,10 +30,10 @@ body {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 1024px) {
   .container {
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
