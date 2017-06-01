@@ -7,16 +7,16 @@ import ninjalogo from './ninja.svg';
 class AppHeader extends Component {
   props: {
     history: Object,
-    location: Object,
+    location: Location,
   };
 
   render() {
-    let navButton = <FlatButton label="Help" href="/about.html" onClick={(e) => {
+    let navButton = <FlatButton label="Help" href="/about.html" onClick={(e: SyntheticEvent) => {
       e.preventDefault();
       this.props.history.push('/about.html');
     }} />;
     if (this.props.location.pathname === '/about.html') {
-      navButton = <FlatButton label="Back" href="/" onClick={(e) => {
+      navButton = <FlatButton label="Back" href="/" onClick={(e: SyntheticEvent) => {
         e.preventDefault();
         this.props.history.push('/');
       }} />;

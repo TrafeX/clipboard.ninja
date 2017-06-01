@@ -24,7 +24,7 @@ class Connect extends Component {
     spinnerId: null,
   };
   state: {
-    roomNumber: number,
+    roomNumber: string,
     spinner: string,
     spinnerId: number,
   };
@@ -44,14 +44,16 @@ class Connect extends Component {
     clearInterval(this.state.spinnerId);
   };
 
-  connectToRoom = () => {
-    if (this.state.roomNumber === '') {
-      return null;
+  connectToRoom = (event: SyntheticEvent) => {
+    event.preventDefault();
+
+    if (this.state.roomNumber === '' || isNaN(this.state.roomNumber)) {
+      return;
     }
-    this.props.connectToRoom(this.state.roomNumber);
+    this.props.connectToRoom(parseInt(this.state.roomNumber, 10));
   };
 
-  handleChange = (event: Object) => {
+  handleChange = (event: SyntheticInputEvent) => {
     this.setState({
       roomNumber: event.target.value,
     })
@@ -80,20 +82,22 @@ class Connect extends Component {
           Use the Device ID above to connect to the other device.
           Or enter the Device ID of the other device below.
         </p>
-        <TextField
-          type="number"
-          floatingLabelText="Enter the device ID"
-          value={this.state.roomNumber}
-          onChange={this.handleChange}
-          disabled={this.props.ownRoomNumber === null}
-        />
-        <RaisedButton
-          label="Connect"
-          primary={true}
-          style={style.button}
-          onClick={() => this.connectToRoom()}
-          disabled={this.state.roomNumber === null}
-        />
+        <form onSubmit={this.connectToRoom}>
+          <TextField
+            type="number"
+            floatingLabelText="Enter the device ID"
+            value={this.state.roomNumber}
+            onChange={this.handleChange}
+            disabled={this.props.ownRoomNumber === null}
+          />
+          <RaisedButton
+            type="submit"
+            label="Connect"
+            primary={true}
+            style={style.button}
+            disabled={this.state.roomNumber === null}
+          />
+        </form>
       </div>
     );
   }

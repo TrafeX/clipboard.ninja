@@ -29,9 +29,10 @@ This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex
 - [ ] Cache busting via webpack for files defined in index.html with react-helmet
 - [ ] React Native Android app
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
-- [ ] Send on ctrl + enter
 - [ ] Seperate the backend server with his own node modules
 - [ ] Describe the features on the about page
+- [ ] Find a way to add new pages to the Service Worker
+- [X] Use keyboard for submitting
 - [X] Add React router to create a seperate about page
 - [X] Webpack2
 - [X] Server side rendering / generate static html

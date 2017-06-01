@@ -2,12 +2,14 @@
 import React, { Component } from 'react';
 import Snackbar from 'material-ui/Snackbar';
 
-class Status extends Component {
-  props: {
-    status: string
-  };
+type State = State;
+type Props = {
+  status: string
+};
 
-  shouldComponentUpdate = (nextProps: Object) => {
+class Status extends Component<void, Props, State> {
+
+  shouldComponentUpdate = (nextProps: Props) => {
     return nextProps.status !== '' && nextProps.status !== this.props.status;
   };
 

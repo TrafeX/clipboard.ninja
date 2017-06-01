@@ -31,7 +31,7 @@ class Send extends Component {
     })
   };
 
-  handleChange = (event: Object) => {
+  handleChange = (event: SyntheticInputEvent) => {
     this.setState({
       message: event.target.value,
     })
