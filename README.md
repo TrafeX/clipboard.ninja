@@ -32,6 +32,7 @@ This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex
 - [ ] Seperate the backend server with his own node modules
 - [ ] Describe the features on the about page
 - [ ] Find a way to add new pages to the Service Worker
+- [ ] Use flow-typed to cover external libraries
 - [X] Use keyboard for submitting
 - [X] Add React router to create a seperate about page
 - [X] Webpack2

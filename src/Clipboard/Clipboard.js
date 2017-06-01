@@ -107,6 +107,10 @@ class Clipboard extends Component {
     });
   };
 
+  componentWillUnmount = () => {
+    this.socket.disconnect();
+  };
+
   sendMessage = (message: string) => {
     this.socket.emit('publish', message);
     ReactGA.event({

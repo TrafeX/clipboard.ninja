@@ -1,6 +1,8 @@
 [ignore]
+.*\.test\.js
 
 [include]
+src/
 
 [libs]
 

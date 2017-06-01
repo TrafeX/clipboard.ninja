@@ -11,26 +11,46 @@ const style = {
   },
 };
 
-class Connect extends Component {
-  props: {
-    ownRoomNumber: ?number,
-    connectedToRoom: ?number,
-    connectToRoom: (number) => void,
-    muiTheme: Object,
-  };
-  state = {
+type Props = {
+  ownRoomNumber: ?number,
+  connectedToRoom: ?number,
+  connectToRoom: (number) => void,
+  muiTheme: Object,
+};
+type State = {
+  roomNumber: string,
+  spinner: string,
+  spinnerId: ?number,
+};
+
+class Connect extends Component<void, Props, State> {
+  state: State = {
     roomNumber: '',
     spinner: '',
     spinnerId: null,
   };
-  state: {
-    roomNumber: string,
-    spinner: string,
-    spinnerId: number,
-  };
 
   componentDidMount = () => {
-    // @todo: Stop spinner when not visible anymore
+    if (this.props.ownRoomNumber === null) {
+      this.startSpinner();
+    }
+  };
+
+  componentWillUnmount = () => {
+    this.stopSpinner();
+  };
+
+  componentWillReceiveProps = (nextProps: Props) => {
+    if (nextProps.ownRoomNumber !== this.props.ownRoomNumber) {
+      if (nextProps.ownRoomNumber === null) {
+        this.startSpinner();
+      } else {
+        this.stopSpinner();
+      }
+    }
+  };
+
+  startSpinner = () => {
     this.setState({
       spinnerId: spinner((char) => {
         this.setState({
@@ -40,8 +60,10 @@ class Connect extends Component {
     })
   };
 
-  componentWillUnmount = () => {
-    clearInterval(this.state.spinnerId);
+  stopSpinner = () => {
+    if (this.state.spinnerId !== null) {
+      clearInterval(this.state.spinnerId);
+    }
   };
 
   connectToRoom = (event: SyntheticEvent) => {
