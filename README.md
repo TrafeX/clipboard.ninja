@@ -5,6 +5,8 @@ Quick and secure way to share text between devices.
 See the website [https://clipboard.ninja](https://clipboard.ninja).
 Or download the [Android App in the Play Store](https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja)
 
+See the [source of the Android app on GitHub](https://github.com/TrafeX/clipboard.ninja-app)
+
 ## Features
 
  * It's realtime; you'll see the text immediately appear on the receiving device.
@@ -27,12 +29,12 @@ This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex
 
 - [ ] Find a way to leave .html out of the urls and still be able to use static webhosting on S3
 - [ ] Cache busting via webpack for files defined in index.html with react-helmet
-- [ ] React Native Android app
 - [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
 - [ ] Seperate the backend server with his own node modules
 - [ ] Describe the features on the about page
 - [ ] Find a way to add new pages to the Service Worker
 - [ ] Use flow-typed to cover external libraries
+- [X] React Native Android app - [see the source](https://github.com/TrafeX/clipboard.ninja-app)
 - [X] Use keyboard for submitting
 - [X] Add React router to create a seperate about page
 - [X] Webpack2
