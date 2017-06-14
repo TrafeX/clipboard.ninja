@@ -12,10 +12,9 @@ before_install:
 
 # @todo: Add Flow when https://github.com/facebook/flow/issues/3649 is resolved
 script:
-  - docker run --rm trafex/clipboard-frontend yarn lint
-# Testsuite disabled, need to rewrite
-#  - docker run --rm trafex/clipboard-frontend yarn test-coverage
-  - docker run --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
+  - docker run -t --rm trafex/clipboard-frontend yarn lint
+  - docker run -t --rm trafex/clipboard-frontend yarn test-coverage
+  - docker run -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
   - docker run -d trafex/clipboard-backend
   - docker run -d trafex/clipboard-frontend
   - docker ps -a
