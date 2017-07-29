@@ -65,22 +65,28 @@ module.exports = {
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
-    // Point sourcemap entries to original disk location
+    // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
-      path.relative(paths.appSrc, info.absoluteResourcePath),
+      path
+        .relative(paths.appSrc, info.absoluteResourcePath)
+        .replace(/\\/g, '/'),
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
-    // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(paths.nodePaths),
+    modules: ['node_modules', paths.appNodeModules].concat(
+      // It is guaranteed to exist because we tweak it in `env.js`
+      process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
+    ),
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    extensions: ['.js', '.json', '.jsx'],
+    // `web` extension prefixes have been added for better support
+    // for React Native Web.
+    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
 
       // Support React Native Web
@@ -157,7 +163,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: require.resolve('babel-loader'),
-
+        options: {
+          compact: true,
+        },
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -189,7 +197,9 @@ module.exports = {
                 {
                   loader: require.resolve('postcss-loader'),
                   options: {
-                    ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+                    // Necessary for external CSS imports to work
+                    // https://github.com/facebookincubator/create-react-app/issues/2677
+                    ident: 'postcss',
                     plugins: () => [
                       require('postcss-flexbugs-fixes'),
                       autoprefixer({
@@ -248,9 +258,17 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
+        // Disabled because of an issue with Uglify breaking seemingly valid code:
+        // https://github.com/facebookincubator/create-react-app/issues/2376
+        // Pending further investigation:
+        // https://github.com/mishoo/UglifyJS2/issues/2011
+        comparisons: false,
       },
       output: {
         comments: false,
+        // Turned on because emoji and regex is not minified properly using default
+        // https://github.com/facebookincubator/create-react-app/issues/2488
+        ascii_only: true,
       },
       sourceMap: true,
     }),
@@ -278,10 +296,20 @@ module.exports = {
           // This message occurs for every build and is a bit too noisy.
           return;
         }
+        if (message.indexOf('Skipping static resource') === 0) {
+          // This message obscures real errors so we ignore it.
+          // https://github.com/facebookincubator/create-react-app/issues/2612
+          return;
+        }
         console.log(message);
       },
       minify: true,
+      // For unknown URLs, fallback to the index page
       navigateFallback: publicUrl + '/index.html',
+      // Ignores URLs starting from /__ (useful for Firebase):
+      // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
+      navigateFallbackWhitelist: [/^(?!\/__).*/],
+      // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     }),
     // Moment.js is an extremely popular library that bundles large locale files
@@ -294,6 +322,7 @@ module.exports = {
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
+    dgram: 'empty',
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
