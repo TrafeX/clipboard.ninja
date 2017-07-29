@@ -66,7 +66,7 @@
     "server": "node server/index.js",
     "test": "node scripts/test.js --env=jsdom",
     "test-coverage": "node scripts/test.js --coverage --colors --env=jsdom",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src && flow check"
   },
   "jest": {
     "collectCoverageFrom": [
