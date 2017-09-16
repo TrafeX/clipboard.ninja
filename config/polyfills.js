@@ -14,7 +14,3 @@ require('whatwg-fetch');
 // Object.assign() is commonly used with React.
 // It will use the native implementation if it's present and isn't buggy.
 Object.assign = require('object-assign');
-
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-require('react-tap-event-plugin')();
