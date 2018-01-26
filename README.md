@@ -34,6 +34,7 @@ This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex
 - [ ] Describe the features on the about page
 - [ ] Find a way to add new pages to the Service Worker
 - [ ] Use flow-typed to cover external libraries
+- [ ] See if we can support file uploads
 - [X] React Native Android app - [see the source](https://github.com/TrafeX/clipboard.ninja-app)
 - [X] Use keyboard for submitting
 - [X] Add React router to create a seperate about page

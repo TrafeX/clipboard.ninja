@@ -20,11 +20,11 @@ type Props = {
 type State = {
   roomNumber: string,
   spinner: string,
-  spinnerId: ?number,
+  spinnerId: ?IntervalID,
 };
 
-class Connect extends Component<void, Props, State> {
-  state: State = {
+class Connect extends Component<Props, State> {
+  state = {
     roomNumber: '',
     spinner: '',
     spinnerId: null,
@@ -66,7 +66,7 @@ class Connect extends Component<void, Props, State> {
     }
   };
 
-  connectToRoom = (event: SyntheticEvent) => {
+  connectToRoom = (event: SyntheticEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
     if (this.state.roomNumber === '' || isNaN(this.state.roomNumber)) {
@@ -75,7 +75,7 @@ class Connect extends Component<void, Props, State> {
     this.props.connectToRoom(parseInt(this.state.roomNumber, 10));
   };
 
-  handleChange = (event: SyntheticInputEvent) => {
+  handleChange = (event: SyntheticInputEvent<HTMLButtonElement>) => {
     this.setState({
       roomNumber: event.target.value,
     })
