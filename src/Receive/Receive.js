@@ -7,10 +7,11 @@ const style = {
   }
 };
 
-class Receive extends Component {
-  props: {
-    receivedMessages: Array<string>,
-  };
+type Props = {
+  receivedMessages: Array<string>,
+}
+
+class Receive extends Component<Props> {
 
   render() {
     return (

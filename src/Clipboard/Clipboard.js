@@ -34,8 +34,16 @@ const style = {
     height: 240,
   }
 };
+type Props = {};
+type State = {
+  messages: Array<string>,
+  ownRoomNumber: ?number,
+  connectedToRoom: ?number,
+  status: string,
+  usersInRoom: number,
+};
 
-class Clipboard extends Component {
+class Clipboard extends Component<Props, State> {
   socket: Object;
 
   state = {
@@ -44,13 +52,6 @@ class Clipboard extends Component {
     connectedToRoom: null,
     status: '',
     usersInRoom: 0,
-  };
-  state: {
-    messages: Array<string>,
-    ownRoomNumber: ?number,
-    connectedToRoom: ?number,
-    status: string,
-    usersInRoom: number,
   };
 
   componentDidMount = () => {

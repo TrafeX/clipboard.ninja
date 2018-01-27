@@ -13,13 +13,17 @@ const style = {
   }
 };
 
-class Send extends Component {
-  props: {
-    sendMessage: (string) => void,
-    connectedToRoom: ?number,
-    usersInRoom: number,
-    muiTheme: Object,
-  };
+type Props = {
+  sendMessage: (string) => void,
+  connectedToRoom: ?number,
+  usersInRoom: number,
+  muiTheme: Object,
+};
+type State = {
+    message: string,
+}
+
+class Send extends Component<Props, State> {
   state = {
     message: '',
   };
@@ -31,7 +35,7 @@ class Send extends Component {
     })
   };
 
-  handleChange = (event: SyntheticInputEvent) => {
+  handleChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState({
       message: event.target.value,
     })

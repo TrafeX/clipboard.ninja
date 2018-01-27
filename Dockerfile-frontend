@@ -1,9 +1,9 @@
-FROM node:8.4.0-alpine
+FROM node:9.4.0-alpine
 
 # Install gblibc for running flow
 RUN apk --no-cache add ca-certificates openssl && \
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
-    wget -q -O glibc.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk && \
+    wget -q -O glibc.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.26-r0/glibc-2.26-r0.apk && \
     apk --no-cache add glibc.apk
 
 # Create workdir
