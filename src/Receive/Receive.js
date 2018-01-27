@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 
 const style = {
   ul: {
@@ -11,19 +11,14 @@ type Props = {
   receivedMessages: Array<string>,
 }
 
-class Receive extends Component<Props> {
-
-  render() {
-    return (
-      <div>
-        <ul style={style.ul}>
-        { this.props.receivedMessages.map((message, i) => {
-          return <li key={i}><pre>{message}</pre></li>
-        }) }
-        </ul>
-      </div>
-    );
-  }
-}
+const Receive = (props: Props) => (
+  <div>
+    <ul style={style.ul}>
+    { props.receivedMessages.map((message, i) => {
+      return <li key={i}><pre>{message}</pre></li>
+    }) }
+    </ul>
+  </div>
+);
 
 export default Receive;
