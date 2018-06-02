@@ -6,6 +6,7 @@
     "express": "^4.15.5",
     "log-timestamp": "^0.1.2",
     "material-ui": "^0.20.0",
+    "raf": "^3.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ga": "^2.4.1",
@@ -28,6 +29,8 @@
     "cross-spawn": "^6.0.3",
     "css-loader": "^0.28.9",
     "dotenv": "^4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.16.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "^1.9.0",
@@ -96,7 +99,8 @@
       "json",
       "web.jsx",
       "jsx"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "babel": {
     "presets": [

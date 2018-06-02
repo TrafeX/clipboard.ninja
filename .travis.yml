@@ -12,8 +12,7 @@ before_install:
 
 script:
   - docker run -t --rm trafex/clipboard-frontend yarn lint
-#  Testsuite disabled, needs rewrite
-#  - docker run --rm trafex/clipboard-frontend yarn test-coverage
+  - docker run --rm trafex/clipboard-frontend yarn test-coverage
   - docker run -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
   - docker run -d trafex/clipboard-backend
   - docker run -d trafex/clipboard-frontend

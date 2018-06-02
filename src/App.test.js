@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
 
-it.skip('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+jest.mock('react-ga');
+
+it('renders without crashing', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper).toMatchSnapshot();
 });
