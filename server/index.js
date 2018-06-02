@@ -8,9 +8,9 @@ let roomIds = {};
 let nrUsers = 0;
 
 function randomInt(low, high) {
+  const number = Math.floor(Math.random() * (high - low) + low);
   let nrLoops = 0;
   do {
-    var number = Math.floor(Math.random() * (high - low) + low);
     if (++nrLoops > 5) {
       return new Error('All room numbers are taken');
     }
