@@ -40,9 +40,9 @@ class Connect extends Component<Props, State> {
     this.stopSpinner();
   };
 
-  componentWillReceiveProps = (nextProps: Props) => {
-    if (nextProps.ownRoomNumber !== this.props.ownRoomNumber) {
-      if (nextProps.ownRoomNumber === null) {
+  componentDidUpdate = (prevProps: Props) => {
+    if (prevProps.ownRoomNumber !== this.props.ownRoomNumber) {
+      if (this.props.ownRoomNumber === null) {
         this.startSpinner();
       } else {
         this.stopSpinner();
