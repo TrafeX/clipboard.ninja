@@ -1,0 +1,1255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <About />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          expandable={false}
+          expanded={null}
+          initiallyExpanded={false}
+          style={
+            Object {
+              "flex": "1 1 400px",
+              "margin": 10,
+            }
+          }
+        >
+          <CardTitle
+            title="How to use"
+          />
+          <CardText
+            style={
+              Object {
+                "paddingTop": 0,
+              }
+            }
+          >
+            <ul>
+              <li>
+                Open the 
+                <a
+                  href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                  style={
+                    Object {
+                      "color": "#78909c",
+                    }
+                  }
+                >
+                  app
+                </a>
+                 or 
+                <a
+                  href="https://clipboard.ninja"
+                  style={
+                    Object {
+                      "color": "#78909c",
+                    }
+                  }
+                >
+                  website
+                </a>
+                 on both devices
+              </li>
+              <li>
+                Enter the device ID from the other device and press connect
+              </li>
+              <li>
+                Type or paste the text you want to send
+              </li>
+              <li>
+                See the text immediately appear on the other device after pressing 'send'
+              </li>
+            </ul>
+          </CardText>
+        </Card>,
+        <Card
+          expandable={false}
+          expanded={null}
+          initiallyExpanded={false}
+          style={
+            Object {
+              "flex": "1 1 400px",
+              "margin": 10,
+            }
+          }
+        >
+          <CardTitle
+            title="Security & Privacy"
+          />
+          <CardText
+            style={
+              Object {
+                "paddingTop": 0,
+              }
+            }
+          >
+            <ul>
+              <li>
+                The website is running on HTTPS which means the connection to and from the server is 
+                <strong>
+                  encrypted
+                </strong>
+                .
+              </li>
+              <li>
+                Data send and received via the website is 
+                <strong>
+                  never stored or visible on the server
+                </strong>
+                .
+              </li>
+              <li>
+                You need to be connected to the sender at the moment data is send, 
+                <strong>
+                  it's not possible to retrieve the data afterwards.
+                </strong>
+              </li>
+            </ul>
+          </CardText>
+        </Card>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <CardTitle
+              title="How to use"
+            />,
+            <CardText
+              style={
+                Object {
+                  "paddingTop": 0,
+                }
+              }
+            >
+              <ul>
+                <li>
+                  Open the 
+                  <a
+                    href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                    style={
+                      Object {
+                        "color": "#78909c",
+                      }
+                    }
+                  >
+                    app
+                  </a>
+                   or 
+                  <a
+                    href="https://clipboard.ninja"
+                    style={
+                      Object {
+                        "color": "#78909c",
+                      }
+                    }
+                  >
+                    website
+                  </a>
+                   on both devices
+                </li>
+                <li>
+                  Enter the device ID from the other device and press connect
+                </li>
+                <li>
+                  Type or paste the text you want to send
+                </li>
+                <li>
+                  See the text immediately appear on the other device after pressing 'send'
+                </li>
+              </ul>
+            </CardText>,
+          ],
+          "expandable": false,
+          "expanded": null,
+          "initiallyExpanded": false,
+          "style": Object {
+            "flex": "1 1 400px",
+            "margin": 10,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "title": "How to use",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <ul>
+                <li>
+                  Open the 
+                  <a
+                    href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                    style={
+                      Object {
+                        "color": "#78909c",
+                      }
+                    }
+                  >
+                    app
+                  </a>
+                   or 
+                  <a
+                    href="https://clipboard.ninja"
+                    style={
+                      Object {
+                        "color": "#78909c",
+                      }
+                    }
+                  >
+                    website
+                  </a>
+                   on both devices
+                </li>
+                <li>
+                  Enter the device ID from the other device and press connect
+                </li>
+                <li>
+                  Type or paste the text you want to send
+                </li>
+                <li>
+                  See the text immediately appear on the other device after pressing 'send'
+                </li>
+              </ul>,
+              "style": Object {
+                "paddingTop": 0,
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    Open the 
+                    <a
+                      href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                      style={
+                        Object {
+                          "color": "#78909c",
+                        }
+                      }
+                    >
+                      app
+                    </a>
+                     or 
+                    <a
+                      href="https://clipboard.ninja"
+                      style={
+                        Object {
+                          "color": "#78909c",
+                        }
+                      }
+                    >
+                      website
+                    </a>
+                     on both devices
+                  </li>,
+                  <li>
+                    Enter the device ID from the other device and press connect
+                  </li>,
+                  <li>
+                    Type or paste the text you want to send
+                  </li>,
+                  <li>
+                    See the text immediately appear on the other device after pressing 'send'
+                  </li>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Open the ",
+                      <a
+                        href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                        style={
+                          Object {
+                            "color": "#78909c",
+                          }
+                        }
+                      >
+                        app
+                      </a>,
+                      " or ",
+                      <a
+                        href="https://clipboard.ninja"
+                        style={
+                          Object {
+                            "color": "#78909c",
+                          }
+                        }
+                      >
+                        website
+                      </a>,
+                      " on both devices",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Open the ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "app",
+                        "href": "https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja",
+                        "style": Object {
+                          "color": "#78909c",
+                        },
+                      },
+                      "ref": null,
+                      "rendered": "app",
+                      "type": "a",
+                    },
+                    " or ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "website",
+                        "href": "https://clipboard.ninja",
+                        "style": Object {
+                          "color": "#78909c",
+                        },
+                      },
+                      "ref": null,
+                      "rendered": "website",
+                      "type": "a",
+                    },
+                    " on both devices",
+                  ],
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Enter the device ID from the other device and press connect",
+                  },
+                  "ref": null,
+                  "rendered": "Enter the device ID from the other device and press connect",
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Type or paste the text you want to send",
+                  },
+                  "ref": null,
+                  "rendered": "Type or paste the text you want to send",
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "See the text immediately appear on the other device after pressing 'send'",
+                  },
+                  "ref": null,
+                  "rendered": "See the text immediately appear on the other device after pressing 'send'",
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <CardTitle
+              title="Security & Privacy"
+            />,
+            <CardText
+              style={
+                Object {
+                  "paddingTop": 0,
+                }
+              }
+            >
+              <ul>
+                <li>
+                  The website is running on HTTPS which means the connection to and from the server is 
+                  <strong>
+                    encrypted
+                  </strong>
+                  .
+                </li>
+                <li>
+                  Data send and received via the website is 
+                  <strong>
+                    never stored or visible on the server
+                  </strong>
+                  .
+                </li>
+                <li>
+                  You need to be connected to the sender at the moment data is send, 
+                  <strong>
+                    it's not possible to retrieve the data afterwards.
+                  </strong>
+                </li>
+              </ul>
+            </CardText>,
+          ],
+          "expandable": false,
+          "expanded": null,
+          "initiallyExpanded": false,
+          "style": Object {
+            "flex": "1 1 400px",
+            "margin": 10,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "title": "Security & Privacy",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <ul>
+                <li>
+                  The website is running on HTTPS which means the connection to and from the server is 
+                  <strong>
+                    encrypted
+                  </strong>
+                  .
+                </li>
+                <li>
+                  Data send and received via the website is 
+                  <strong>
+                    never stored or visible on the server
+                  </strong>
+                  .
+                </li>
+                <li>
+                  You need to be connected to the sender at the moment data is send, 
+                  <strong>
+                    it's not possible to retrieve the data afterwards.
+                  </strong>
+                </li>
+              </ul>,
+              "style": Object {
+                "paddingTop": 0,
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    The website is running on HTTPS which means the connection to and from the server is 
+                    <strong>
+                      encrypted
+                    </strong>
+                    .
+                  </li>,
+                  <li>
+                    Data send and received via the website is 
+                    <strong>
+                      never stored or visible on the server
+                    </strong>
+                    .
+                  </li>,
+                  <li>
+                    You need to be connected to the sender at the moment data is send, 
+                    <strong>
+                      it's not possible to retrieve the data afterwards.
+                    </strong>
+                  </li>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "The website is running on HTTPS which means the connection to and from the server is ",
+                      <strong>
+                        encrypted
+                      </strong>,
+                      ".",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "The website is running on HTTPS which means the connection to and from the server is ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "encrypted",
+                      },
+                      "ref": null,
+                      "rendered": "encrypted",
+                      "type": "strong",
+                    },
+                    ".",
+                  ],
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Data send and received via the website is ",
+                      <strong>
+                        never stored or visible on the server
+                      </strong>,
+                      ".",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Data send and received via the website is ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "never stored or visible on the server",
+                      },
+                      "ref": null,
+                      "rendered": "never stored or visible on the server",
+                      "type": "strong",
+                    },
+                    ".",
+                  ],
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "You need to be connected to the sender at the moment data is send, ",
+                      <strong>
+                        it's not possible to retrieve the data afterwards.
+                      </strong>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "You need to be connected to the sender at the moment data is send, ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "it's not possible to retrieve the data afterwards.",
+                      },
+                      "ref": null,
+                      "rendered": "it's not possible to retrieve the data afterwards.",
+                      "type": "strong",
+                    },
+                  ],
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            expandable={false}
+            expanded={null}
+            initiallyExpanded={false}
+            style={
+              Object {
+                "flex": "1 1 400px",
+                "margin": 10,
+              }
+            }
+          >
+            <CardTitle
+              title="How to use"
+            />
+            <CardText
+              style={
+                Object {
+                  "paddingTop": 0,
+                }
+              }
+            >
+              <ul>
+                <li>
+                  Open the 
+                  <a
+                    href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                    style={
+                      Object {
+                        "color": "#78909c",
+                      }
+                    }
+                  >
+                    app
+                  </a>
+                   or 
+                  <a
+                    href="https://clipboard.ninja"
+                    style={
+                      Object {
+                        "color": "#78909c",
+                      }
+                    }
+                  >
+                    website
+                  </a>
+                   on both devices
+                </li>
+                <li>
+                  Enter the device ID from the other device and press connect
+                </li>
+                <li>
+                  Type or paste the text you want to send
+                </li>
+                <li>
+                  See the text immediately appear on the other device after pressing 'send'
+                </li>
+              </ul>
+            </CardText>
+          </Card>,
+          <Card
+            expandable={false}
+            expanded={null}
+            initiallyExpanded={false}
+            style={
+              Object {
+                "flex": "1 1 400px",
+                "margin": 10,
+              }
+            }
+          >
+            <CardTitle
+              title="Security & Privacy"
+            />
+            <CardText
+              style={
+                Object {
+                  "paddingTop": 0,
+                }
+              }
+            >
+              <ul>
+                <li>
+                  The website is running on HTTPS which means the connection to and from the server is 
+                  <strong>
+                    encrypted
+                  </strong>
+                  .
+                </li>
+                <li>
+                  Data send and received via the website is 
+                  <strong>
+                    never stored or visible on the server
+                  </strong>
+                  .
+                </li>
+                <li>
+                  You need to be connected to the sender at the moment data is send, 
+                  <strong>
+                    it's not possible to retrieve the data afterwards.
+                  </strong>
+                </li>
+              </ul>
+            </CardText>
+          </Card>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <CardTitle
+                title="How to use"
+              />,
+              <CardText
+                style={
+                  Object {
+                    "paddingTop": 0,
+                  }
+                }
+              >
+                <ul>
+                  <li>
+                    Open the 
+                    <a
+                      href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                      style={
+                        Object {
+                          "color": "#78909c",
+                        }
+                      }
+                    >
+                      app
+                    </a>
+                     or 
+                    <a
+                      href="https://clipboard.ninja"
+                      style={
+                        Object {
+                          "color": "#78909c",
+                        }
+                      }
+                    >
+                      website
+                    </a>
+                     on both devices
+                  </li>
+                  <li>
+                    Enter the device ID from the other device and press connect
+                  </li>
+                  <li>
+                    Type or paste the text you want to send
+                  </li>
+                  <li>
+                    See the text immediately appear on the other device after pressing 'send'
+                  </li>
+                </ul>
+              </CardText>,
+            ],
+            "expandable": false,
+            "expanded": null,
+            "initiallyExpanded": false,
+            "style": Object {
+              "flex": "1 1 400px",
+              "margin": 10,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "title": "How to use",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <ul>
+                  <li>
+                    Open the 
+                    <a
+                      href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                      style={
+                        Object {
+                          "color": "#78909c",
+                        }
+                      }
+                    >
+                      app
+                    </a>
+                     or 
+                    <a
+                      href="https://clipboard.ninja"
+                      style={
+                        Object {
+                          "color": "#78909c",
+                        }
+                      }
+                    >
+                      website
+                    </a>
+                     on both devices
+                  </li>
+                  <li>
+                    Enter the device ID from the other device and press connect
+                  </li>
+                  <li>
+                    Type or paste the text you want to send
+                  </li>
+                  <li>
+                    See the text immediately appear on the other device after pressing 'send'
+                  </li>
+                </ul>,
+                "style": Object {
+                  "paddingTop": 0,
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <li>
+                      Open the 
+                      <a
+                        href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                        style={
+                          Object {
+                            "color": "#78909c",
+                          }
+                        }
+                      >
+                        app
+                      </a>
+                       or 
+                      <a
+                        href="https://clipboard.ninja"
+                        style={
+                          Object {
+                            "color": "#78909c",
+                          }
+                        }
+                      >
+                        website
+                      </a>
+                       on both devices
+                    </li>,
+                    <li>
+                      Enter the device ID from the other device and press connect
+                    </li>,
+                    <li>
+                      Type or paste the text you want to send
+                    </li>,
+                    <li>
+                      See the text immediately appear on the other device after pressing 'send'
+                    </li>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Open the ",
+                        <a
+                          href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
+                          style={
+                            Object {
+                              "color": "#78909c",
+                            }
+                          }
+                        >
+                          app
+                        </a>,
+                        " or ",
+                        <a
+                          href="https://clipboard.ninja"
+                          style={
+                            Object {
+                              "color": "#78909c",
+                            }
+                          }
+                        >
+                          website
+                        </a>,
+                        " on both devices",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Open the ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "app",
+                          "href": "https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja",
+                          "style": Object {
+                            "color": "#78909c",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": "app",
+                        "type": "a",
+                      },
+                      " or ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "website",
+                          "href": "https://clipboard.ninja",
+                          "style": Object {
+                            "color": "#78909c",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": "website",
+                        "type": "a",
+                      },
+                      " on both devices",
+                    ],
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Enter the device ID from the other device and press connect",
+                    },
+                    "ref": null,
+                    "rendered": "Enter the device ID from the other device and press connect",
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Type or paste the text you want to send",
+                    },
+                    "ref": null,
+                    "rendered": "Type or paste the text you want to send",
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "See the text immediately appear on the other device after pressing 'send'",
+                    },
+                    "ref": null,
+                    "rendered": "See the text immediately appear on the other device after pressing 'send'",
+                    "type": "li",
+                  },
+                ],
+                "type": "ul",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <CardTitle
+                title="Security & Privacy"
+              />,
+              <CardText
+                style={
+                  Object {
+                    "paddingTop": 0,
+                  }
+                }
+              >
+                <ul>
+                  <li>
+                    The website is running on HTTPS which means the connection to and from the server is 
+                    <strong>
+                      encrypted
+                    </strong>
+                    .
+                  </li>
+                  <li>
+                    Data send and received via the website is 
+                    <strong>
+                      never stored or visible on the server
+                    </strong>
+                    .
+                  </li>
+                  <li>
+                    You need to be connected to the sender at the moment data is send, 
+                    <strong>
+                      it's not possible to retrieve the data afterwards.
+                    </strong>
+                  </li>
+                </ul>
+              </CardText>,
+            ],
+            "expandable": false,
+            "expanded": null,
+            "initiallyExpanded": false,
+            "style": Object {
+              "flex": "1 1 400px",
+              "margin": 10,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "title": "Security & Privacy",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <ul>
+                  <li>
+                    The website is running on HTTPS which means the connection to and from the server is 
+                    <strong>
+                      encrypted
+                    </strong>
+                    .
+                  </li>
+                  <li>
+                    Data send and received via the website is 
+                    <strong>
+                      never stored or visible on the server
+                    </strong>
+                    .
+                  </li>
+                  <li>
+                    You need to be connected to the sender at the moment data is send, 
+                    <strong>
+                      it's not possible to retrieve the data afterwards.
+                    </strong>
+                  </li>
+                </ul>,
+                "style": Object {
+                  "paddingTop": 0,
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <li>
+                      The website is running on HTTPS which means the connection to and from the server is 
+                      <strong>
+                        encrypted
+                      </strong>
+                      .
+                    </li>,
+                    <li>
+                      Data send and received via the website is 
+                      <strong>
+                        never stored or visible on the server
+                      </strong>
+                      .
+                    </li>,
+                    <li>
+                      You need to be connected to the sender at the moment data is send, 
+                      <strong>
+                        it's not possible to retrieve the data afterwards.
+                      </strong>
+                    </li>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "The website is running on HTTPS which means the connection to and from the server is ",
+                        <strong>
+                          encrypted
+                        </strong>,
+                        ".",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "The website is running on HTTPS which means the connection to and from the server is ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "encrypted",
+                        },
+                        "ref": null,
+                        "rendered": "encrypted",
+                        "type": "strong",
+                      },
+                      ".",
+                    ],
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Data send and received via the website is ",
+                        <strong>
+                          never stored or visible on the server
+                        </strong>,
+                        ".",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Data send and received via the website is ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "never stored or visible on the server",
+                        },
+                        "ref": null,
+                        "rendered": "never stored or visible on the server",
+                        "type": "strong",
+                      },
+                      ".",
+                    ],
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "You need to be connected to the sender at the moment data is send, ",
+                        <strong>
+                          it's not possible to retrieve the data afterwards.
+                        </strong>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "You need to be connected to the sender at the moment data is send, ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "it's not possible to retrieve the data afterwards.",
+                        },
+                        "ref": null,
+                        "rendered": "it's not possible to retrieve the data afterwards.",
+                        "type": "strong",
+                      },
+                    ],
+                    "type": "li",
+                  },
+                ],
+                "type": "ul",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,10 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import AppHeader from './AppHeader';
+import { shallow } from 'enzyme';
 
-it.skip('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <AppHeader />
-    ,div);
+it('renders with a link to Help', () => {
+  const mockHistoryPush = jest.fn();
+  const wrapper = shallow(<AppHeader.WrappedComponent location={{pathname: '/'}} history={{push: mockHistoryPush}}/>);
+  expect(wrapper).toMatchSnapshot();
+
+});
+
+it('renders with a link to Home', () => {
+  const wrapper = shallow(<AppHeader.WrappedComponent location={{pathname: '/about.html'}}/>);
+  expect(wrapper).toMatchSnapshot();
 });

@@ -1,11 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Receive from './Receive';
+import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <Receive
-      receivedMessages={['Hello', 'World']}
-    />, div);
+  const wrapper = shallow(<Receive receivedMessages={['Hello']} />);
+  expect(wrapper).toMatchSnapshot();
 });

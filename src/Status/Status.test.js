@@ -1,15 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Status from './Status';
+import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <MuiThemeProvider>
-      <Status
-        status="test"
-      />
-    </MuiThemeProvider>,
-    div);
+  const wrapper = shallow(<Status status={'Testing'}/>)
+  expect(wrapper).toMatchSnapshot();
 });
