@@ -80,6 +80,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js && react-snapshot",
     "test": "node scripts/test.js",
+    "test-coverage": "node scripts/test.js --coverage --colors --env=jsdom",
+    "lint": "eslint ./src && flow check",
     "server": "node server/index.js"
   },
   "eslintConfig": {
