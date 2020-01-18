@@ -5,7 +5,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Helmet} from "react-helmet";
 import {Route, Switch} from 'react-router-dom';
-import manifest from './manifest.json';
 import AppHeader from './AppHeader';
 import Clipboard from './Clipboard';
 import About from './About';
@@ -41,7 +40,7 @@ const App = () => (
   <MuiThemeProvider muiTheme={muiTheme}>
     <div style={style.background}>
       <Helmet>
-        <link rel="manifest" href={manifest} />
+        <link rel="manifest" href="/manifest-v1.json" />
       </Helmet>
       <AppHeader/>
       <Switch>
