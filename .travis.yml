@@ -11,9 +11,9 @@ before_install:
   - docker build -t trafex/clipboard-frontend -f Dockerfile-frontend .
 
 script:
-  - docker run -t --rm trafex/clipboard-frontend yarn lint
-  - docker run --rm trafex/clipboard-frontend yarn test-coverage
-  - docker run -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
+  - docker run -e CI=true -t --rm trafex/clipboard-frontend yarn lint
+  - docker run -e CI=true --rm trafex/clipboard-frontend yarn test-coverage
+  - docker run -e CI=true -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
   - docker run -d trafex/clipboard-backend
   - docker run -d trafex/clipboard-frontend
   - docker ps -a
