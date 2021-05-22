@@ -49,7 +49,7 @@ const App = () => (
         <Route path="/about.html" component={withTracker(About)}/>
       </Switch>
       <footer style={style.footer}>
-        <a href="https://github.com/TrafeX/clipboard.ninja/blob/master/PRIVACY.md" style={style.a}>Privacy Policy</a> - Created by <a href="https://www.trafex.nl" style={style.a}>Tim de Pater</a> - Check out the <a href="https://github.com/trafex/clipboard.ninja" style={style.a}>source on GitHub</a>
+        <a href="https://github.com/TrafeX/clipboard.ninja/blob/master/PRIVACY.md" style={style.a}>Privacy Policy</a> - Created by <a href="https://www.trafex.nl" style={style.a}>Tim de Pater</a> - <a href="https://github.com/trafex/clipboard.ninja" style={style.a}>Source on GitHub</a>
       </footer>
     </div>
   </MuiThemeProvider>
