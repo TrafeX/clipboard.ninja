@@ -3,6 +3,7 @@ name: Test & deploy application
 on:
   push:
     branches: [ master ]
+  pull_request:
 
 jobs:
   deploy:
