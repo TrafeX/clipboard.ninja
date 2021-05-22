@@ -51,7 +51,7 @@ I would like to make sure you are fully aware of all of your data protection rig
 
 **The right to data portability** – You have the right to request that clipboard.ninja transfer the data that we have collected to another organization, or directly to you, under certain conditions.
 
-If you make a request, I have one month to respond to you. If you would like to exercise any of these rights, please contact us at our email: privacy@trafex.nl
+If you make a request, I have one month to respond to you. If you would like to exercise any of these rights, please contact me.
 
 # Cookies
 Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information.
@@ -69,7 +69,7 @@ Clipboard.ninja contains links to other websites. Our privacy policy applies onl
 # Changes to our privacy policy
 Clipboard.ninja keeps its privacy policy under regular review and places any updates on this web page. This privacy policy was last updated on 22 May 2021.
 
-# How to contact us
+# How to contact me
 If you have any questions about clipboard.ninja privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us.
 
-Email us at: privacy@trafex.nl
+Email me at: privacy@trafex.nl
