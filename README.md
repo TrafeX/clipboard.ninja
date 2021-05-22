@@ -22,28 +22,3 @@ You can run a local version with Docker:
     docker-compose up
 
 Go to [http://localhost:3000]()
-
-### Todo
-
-This is a rebuild of the [orginal clipboard.ninja app](https://github.com/trafex/clipboard), build with React.
-
-- [ ] Find a way to leave .html out of the urls and still be able to use static webhosting on S3
-- [ ] Cache busting via webpack for files defined in index.html with react-helmet
-- [ ] Better tests: http://facebook.github.io/jest/docs/en/tutorial-react-native.html#snapshot-test
-- [ ] Seperate the backend server with his own node modules
-- [ ] Describe the features on the about page
-- [ ] Find a way to add new pages to the Service Worker
-- [ ] Use flow-typed to cover external libraries
-- [ ] See if we can support file uploads
-- [X] React Native Android app - [see the source](https://github.com/TrafeX/clipboard.ninja-app)
-- [X] Use keyboard for submitting
-- [X] Add React router to create a seperate about page
-- [X] Webpack2
-- [X] Server side rendering / generate static html
-- [X] Continuous Integration
-- [X] Continuous Deployment
-- [X] Docker containers
-- [X] Cleanup used packages and configs
-- [X] Show number of connected devices
-- [X] Add Google Analytics
-- [X] Set correct Cache-Control headers on static files
