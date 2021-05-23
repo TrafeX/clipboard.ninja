@@ -25,7 +25,7 @@ const About = () => (
       />
       <CardText style={{paddingTop: 0}}>
         <ul>
-          <li>Open the <a href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja" style={style.a}>app</a> or <a href="https://clipboard.ninja" style={style.a}>website</a> on both devices</li>
+          <li>Open the <a href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja" style={style.a} target="_blank" rel="noopener noreferrer">app</a> or <a href="https://clipboard.ninja" style={style.a} target="_blank" rel="noopener noreferrer">website</a> on both devices</li>
           <li>Enter the device ID from the other device and press connect</li>
           <li>Type or paste the text you want to send</li>
           <li>See the text immediately appear on the other device after pressing 'send'</li>
