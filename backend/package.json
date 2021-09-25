@@ -1,0 +1,30 @@
+{
+  "name": "clipboard.ninja-backend",
+  "version": "1.0.0",
+  "description": "The backend server for clipboard.ninja",
+  "main": "index.js",
+  "repository": "https://github.com/trafex/clipboard.ninja",
+  "dependencies": {
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.13",
+    "prettier-eslint": "^13.0.0",
+    "prettier-eslint-cli": "^5.0.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier-eslint \"$PWD/src/**/*.{ts,tsx}\" --tab-width 4 --list-different",
+    "eslint": "eslint --ext .tsx --ext .ts src/",
+    "develop": "nodemon --ext ts --exec 'ts-node src/server.ts'",
+    "build": "tsc",
+    "start": "node server.js"
+  },
+  "author": "Tim de Pater",
+  "license": "MIT"
+}
