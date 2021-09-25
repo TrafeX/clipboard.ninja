@@ -15,8 +15,8 @@ jobs:
 
       - name: Build images
         run: |-
-          docker build -t trafex/clipboard-backend -f Dockerfile-backend .
-          docker build -t trafex/clipboard-frontend -f Dockerfile-frontend .
+          docker build -t trafex/clipboard-backend backend/
+          docker build -t trafex/clipboard-frontend frontend/
 
       - name: Test images
         run: |-

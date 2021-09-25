@@ -6,7 +6,7 @@ import Connect from './../Connect';
 import Status from './../Status';
 import {blueGrey400} from 'material-ui/styles/colors';
 import {Card, CardTitle, CardText} from 'material-ui/Card';
-import SocketIOClient from 'socket.io-client';
+import {io} from 'socket.io-client';
 import ReactGA from 'react-ga';
 
 const style = {
@@ -57,7 +57,7 @@ class Clipboard extends Component<Props, State> {
   componentDidMount = () => {
 
     // @todo: Move this to higer component to keep the socket alive?
-    this.socket = SocketIOClient(process.env.REACT_APP_BACKEND_URL);
+    this.socket = io(process.env.REACT_APP_BACKEND_URL);
 
     this.socket.on('connect_error', () => {
       this.setState({

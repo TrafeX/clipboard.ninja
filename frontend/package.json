@@ -7,8 +7,7 @@
     "log-timestamp": "^0.3.0",
     "material-ui": "^0.20.0",
     "most-awesome-spinner-ever": "^1.0.3",
-    "socket.io": "^2.0.1",
-    "socket.io-client": "^2.0.1"
+    "socket.io-client": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.8.3",

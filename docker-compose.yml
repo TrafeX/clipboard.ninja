@@ -1,13 +1,13 @@
-version: '3'
+version: "3.7"
 services:
   backend:
     build:
-      context: ./
-      dockerfile: Dockerfile-backend
+      context: ./backend
+      target: dev
     ports:
       - "3001:3001"
     volumes:
-      - ".:/usr/src/app"
+      - "./backend:/usr/src/app"
     networks:
       - clipboard
 
@@ -15,14 +15,13 @@ services:
     depends_on:
       - backend
     build:
-      context: ./
-      dockerfile: Dockerfile-frontend
+      context: ./frontend
     ports:
       - "3000:3000"
     environment:
       BACKEND_SERVER: backend
     volumes:
-      - ".:/usr/src/app"
+      - "./frontend:/usr/src/app"
     networks:
       - clipboard
 
