@@ -15,13 +15,14 @@ jobs:
 
       - name: Build images
         run: |-
-          docker build -t trafex/clipboard-backend backend/
-          docker build -t trafex/clipboard-frontend frontend/
+          docker build --target=build -t trafex/clipboard-backend:ci backend/
+          docker build -t trafex/clipboard-backend:latest backend/
+          docker build -t trafex/clipboard-frontend:latest frontend/
 
       - name: Test images
         run: |-
           docker run -e CI=true -t --rm trafex/clipboard-frontend yarn lint
-          docker run -e CI=true -t --rm trafex/clipboard-backend npm run eslint
+          docker run -e CI=true -t --rm trafex/clipboard-backend:ci npm run eslint
           docker run -e CI=true --rm trafex/clipboard-frontend yarn test-coverage
           docker run -e CI=true -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
           docker run -d trafex/clipboard-backend
