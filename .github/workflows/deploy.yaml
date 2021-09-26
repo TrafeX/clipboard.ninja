@@ -21,11 +21,25 @@ jobs:
       - name: Test images
         run: |-
           docker run -e CI=true -t --rm trafex/clipboard-frontend yarn lint
+          docker run -e CI=true -t --rm trafex/clipboard-backend npm eslint
           docker run -e CI=true --rm trafex/clipboard-frontend yarn test-coverage
           docker run -e CI=true -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
           docker run -d trafex/clipboard-backend
           docker run -d trafex/clipboard-frontend
           docker ps -a
+
+      - name: Run Trivy vulnerability scanner on backend
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'trafex/clipboard-backend:latest'
+          format: 'template'
+          template: '@/contrib/sarif.tpl'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: 'trivy-results.sarif'
 
       - name: Login to Docker Hub
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
