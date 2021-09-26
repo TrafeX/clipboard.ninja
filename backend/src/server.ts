@@ -1,5 +1,6 @@
 import { createServer } from "http";
 import { Server, Socket } from "socket.io";
+require('log-timestamp');
 
 const httpServer = createServer();
 const io = new Server(httpServer, {
