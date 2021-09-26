@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "express": "^4.15.5",
     "log-timestamp": "^0.3.0",
     "material-ui": "^0.20.0",
     "most-awesome-spinner-ever": "^1.0.3",
