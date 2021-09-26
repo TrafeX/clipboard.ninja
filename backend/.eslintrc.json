@@ -16,5 +16,19 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "never"
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": ["off"],
+        "semi": ["error", "always"],
+        "arrow-parens": ["error", "as-needed"],
+        "indent": ["error", 4]
     }
 }

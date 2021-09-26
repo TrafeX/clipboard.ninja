@@ -5,8 +5,9 @@ const httpServer = createServer();
 const io = new Server(httpServer, {
     cors: {
         origin: ["http://localhost:3000", "https://clipboard.ninja"],
-        methods: ["GET", "POST"]
-    }
+        methods: ["GET", "POST"],
+        credentials: true,
+    },
 });
 
 interface roomIds {
