@@ -22,7 +22,7 @@ interface mySocket extends Socket {
 const roomIds = {} as roomIds;
 let nrUsers = 0;
 
-function randomInt(low: number, high: number) {
+const randomInt = (low: number, high: number) => {
     const number = Math.floor(Math.random() * (high - low) + low);
     let nrLoops = 0;
     do {
@@ -32,7 +32,7 @@ function randomInt(low: number, high: number) {
     } while (typeof(roomIds['room-' + number]) !== 'undefined');
 
     return number;
-}
+};
 
 io.on("connection", (socket: mySocket) => {
     const roomNr = randomInt(100000, 999999);
@@ -48,8 +48,8 @@ io.on("connection", (socket: mySocket) => {
     roomIds[socket.roomId] = 1;
     ++nrUsers;
 
-    console.log('User ' + nrUsers + ' registered in room: ' + socket.roomId);
-    socket.on('disconnect', function() {
+    console.log(`User ${nrUsers} registered in room: ${socket.roomId}`);
+    socket.on('disconnect', () => {
         if (typeof socket.roomId == "undefined") {
             return;
         }
@@ -61,15 +61,15 @@ io.on("connection", (socket: mySocket) => {
             delete roomIds[socket.roomId];
         }
         --nrUsers;
-        console.log('User disconnected from ' + socket.roomId);
+        console.log(`User disconnected from ${socket.roomId}`);
     });
-    socket.on('publish', function(msg){
+    socket.on('publish', msg => {
         if (typeof socket.roomId == "undefined") {
             return;
         }
         io.to(socket.roomId).emit('message', msg);
     });
-    socket.on('join', function(roomNr){
+    socket.on('join', roomNr => {
         if (typeof socket.roomId == "undefined") {
             return;
         }
@@ -86,7 +86,7 @@ io.on("connection", (socket: mySocket) => {
         roomIds[socket.roomId]++;
 
         io.to(socket.roomId).emit('subscribed', roomNr, roomIds[socket.roomId]);
-        console.log('User in ' + socket.roomId + ' joins ' + socket.roomId);
+        console.log(`User ${roomIds[socket.roomId]} joins ${socket.roomId}`);
     });
 });
 
