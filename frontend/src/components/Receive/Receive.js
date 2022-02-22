@@ -14,7 +14,7 @@ type Props = {
 const Receive = (props: Props) => (
   <div>
     <ul style={style.ul}>
-    { props.receivedMessages.map((message, i) => {
+    { props.receivedMessages && props.receivedMessages.map((message, i) => {
       return <li key={i}><pre>{message}</pre></li>
     }) }
     </ul>
