@@ -9,7 +9,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import AppHeader from './components/AppHeader';
 import Clipboard from './components/Clipboard';
 import About from './components/About';
-import { createInstance, MatomoProvider, useMatomo } from '@datapunt/matomo-tracker-react';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { socket, SocketContext } from './context/SocketContext';
 import Status from './components/Status';
 import useSocketClient from './hooks/useSocketClient';
@@ -54,12 +54,6 @@ const style = {
   }
 };
 
-const matomoInstance = createInstance({
-  urlBase: 'https://matomo.trafex.nl',
-  siteId: 2,
-  linkTracking: false
-});
-
 ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
   gaOptions: {
     siteSpeedSampleRate: 10
@@ -94,35 +88,33 @@ const App = () => {
   return (
     <MuiThemeProvider theme={muiTheme}>
       <V0MuiThemeProvider muiTheme={muiThemeV0}>
-        <MatomoProvider value={matomoInstance}>
-          <SocketContext.Provider value={socket}>
-            <div style={style.background}>
-              <Helmet>
-                <link rel="manifest" href="/manifest-v1.json" />
-              </Helmet>
-              <AppHeader />
-              <Status
-                status={status}
-              />
-              <Switch>
-                <Route exact path="/">
-                  <Clipboard ownRoomNumber={ownRoomNumber} connectedToRoom={connectedToRoom} usersInRoom={usersInRoom} messages={messages} />
-                </Route>
-                <Route path="/index.html">
-                  <Clipboard ownRoomNumber={ownRoomNumber} connectedToRoom={connectedToRoom} usersInRoom={usersInRoom} messages={messages} />
-                </Route>
-                <Route path="/about.html">
-                  <About />
-                </Route>
-              </Switch>
-              <footer style={style.footer}>
-                <a href="https://github.com/TrafeX/clipboard.ninja/blob/master/PRIVACY.md" style={style.a} target="_blank" rel="noopener noreferrer">Privacy Policy</a> - <a href="https://github.com/trafex/clipboard.ninja" style={style.a} target="_blank" rel="noopener noreferrer">Source on GitHub</a> - Created by <a href="https://www.trafex.nl" style={style.a} target="_blank" rel="noopener noreferrer">Tim de Pater</a>
-              </footer>
-            </div>
-          </SocketContext.Provider>
-        </MatomoProvider>
+        <SocketContext.Provider value={socket}>
+          <div style={style.background}>
+            <Helmet>
+              <link rel="manifest" href="/manifest-v1.json" />
+            </Helmet>
+            <AppHeader />
+            <Status
+              status={status}
+            />
+            <Switch>
+              <Route exact path="/">
+                <Clipboard ownRoomNumber={ownRoomNumber} connectedToRoom={connectedToRoom} usersInRoom={usersInRoom} messages={messages} />
+              </Route>
+              <Route path="/index.html">
+                <Clipboard ownRoomNumber={ownRoomNumber} connectedToRoom={connectedToRoom} usersInRoom={usersInRoom} messages={messages} />
+              </Route>
+              <Route path="/about.html">
+                <About />
+              </Route>
+            </Switch>
+            <footer style={style.footer}>
+              <a href="https://github.com/TrafeX/clipboard.ninja/blob/master/PRIVACY.md" style={style.a} target="_blank" rel="noopener noreferrer">Privacy Policy</a> - <a href="https://github.com/trafex/clipboard.ninja" style={style.a} target="_blank" rel="noopener noreferrer">Source on GitHub</a> - Created by <a href="https://www.trafex.nl" style={style.a} target="_blank" rel="noopener noreferrer">Tim de Pater</a>
+            </footer>
+          </div>
+        </SocketContext.Provider>
       </V0MuiThemeProvider>
-    </MuiThemeProvider>
+    </MuiThemeProvider >
   )
 };
 

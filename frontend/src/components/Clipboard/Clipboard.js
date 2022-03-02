@@ -6,6 +6,7 @@ import { blueGrey400 } from 'material-ui/styles/colors';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import ReactGA from 'react-ga';
 import { SocketContext } from '../../context/SocketContext';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 const style = {
   cardLeft: {
@@ -33,9 +34,11 @@ const style = {
   }
 };
 
-const Clipboard = ({ownRoomNumber, connectedToRoom, usersInRoom, messages}) => {
+const Clipboard = ({ ownRoomNumber, connectedToRoom, usersInRoom, messages }) => {
 
   const socket = useContext(SocketContext);
+
+  const { trackEvent } = useMatomo();
 
   // componentWillUnmount = () => {
   //   this.socket.disconnect();
@@ -43,18 +46,22 @@ const Clipboard = ({ownRoomNumber, connectedToRoom, usersInRoom, messages}) => {
 
   const sendMessage = (message: string) => {
     socket.emit('publish', message);
-    ReactGA.event({
+    const event = {
       category: 'user-interaction',
       action: 'publish-message'
-    });
+    }
+    ReactGA.event(event);
+    trackEvent(event);
   };
 
   const connectToRoom = (room: ?number) => {
     socket.emit('join', room);
-    ReactGA.event({
+    const event = {
       category: 'user-interaction',
       action: 'connect-to-device'
-    });
+    }
+    ReactGA.event(event);
+    trackEvent(event);
   };
 
   return (
