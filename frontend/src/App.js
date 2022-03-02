@@ -4,11 +4,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'; // v1.x
 import { MuiThemeProvider as V0MuiThemeProvider } from 'material-ui';
 import { Helmet } from "react-helmet";
-import { Route, Switch } from 'react-router-dom';
+import ReactGA from 'react-ga';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import AppHeader from './components/AppHeader';
 import Clipboard from './components/Clipboard';
 import About from './components/About';
-import withTracker from './withTracker';
 import { createInstance, MatomoProvider, useMatomo } from '@datapunt/matomo-tracker-react';
 import { socket, SocketContext } from './context/SocketContext';
 import Status from './components/Status';
@@ -54,29 +54,47 @@ const style = {
   }
 };
 
+const matomoInstance = createInstance({
+  urlBase: 'https://matomo.trafex.nl',
+  siteId: 2,
+  linkTracking: false
+});
+
+ReactGA.initialize(process.env.REACT_APP_GA_CODE, {
+  gaOptions: {
+    siteSpeedSampleRate: 10
+  }
+});
+
 const App = () => {
 
-  const instance = createInstance({
-    urlBase: 'https://matomo.trafex.nl',
-    siteId: 2,
-    linkTracking: false
-  });
-
   const { trackPageView, enableLinkTracking } = useMatomo()
+  enableLinkTracking();
+
+  const history = useHistory();
 
   // Track page view
   useEffect(() => {
     trackPageView()
-  })
-  
-  enableLinkTracking();
+    history.listen(trackPageView) // To track the subsequent pageviews
+  }, [history, trackPageView])
 
-  const {ownRoomNumber, connectedToRoom, status, usersInRoom, messages} = useSocketClient(socket);
+  useEffect(() => {
+    const trackPage = () => {
+      ReactGA.set({ page: history.location.pathname });
+      ReactGA.pageview(history.location.pathname);
+    };
+
+    trackPage();
+    history.listen(trackPage); // To track the subsequent pageviews
+  }, [history]);
+
+  const { ownRoomNumber, connectedToRoom, status, usersInRoom, messages } = useSocketClient(socket);
 
   return (
     <MuiThemeProvider theme={muiTheme}>
       <V0MuiThemeProvider muiTheme={muiThemeV0}>
-        <MatomoProvider value={instance}>
+        <MatomoProvider value={matomoInstance}>
           <SocketContext.Provider value={socket}>
             <div style={style.background}>
               <Helmet>
@@ -87,9 +105,15 @@ const App = () => {
                 status={status}
               />
               <Switch>
-                <Route exact path="/" component={withTracker(() => Clipboard(ownRoomNumber, connectedToRoom, usersInRoom, messages))} />
-                <Route path="/index.html" component={withTracker(() => Clipboard(ownRoomNumber, connectedToRoom, usersInRoom, messages))} />
-                <Route path="/about.html" component={withTracker(About)} />
+                <Route exact path="/">
+                  <Clipboard ownRoomNumber={ownRoomNumber} connectedToRoom={connectedToRoom} usersInRoom={usersInRoom} messages={messages} />
+                </Route>
+                <Route path="/index.html">
+                  <Clipboard ownRoomNumber={ownRoomNumber} connectedToRoom={connectedToRoom} usersInRoom={usersInRoom} messages={messages} />
+                </Route>
+                <Route path="/about.html">
+                  <About />
+                </Route>
               </Switch>
               <footer style={style.footer}>
                 <a href="https://github.com/TrafeX/clipboard.ninja/blob/master/PRIVACY.md" style={style.a} target="_blank" rel="noopener noreferrer">Privacy Policy</a> - <a href="https://github.com/trafex/clipboard.ninja" style={style.a} target="_blank" rel="noopener noreferrer">Source on GitHub</a> - Created by <a href="https://www.trafex.nl" style={style.a} target="_blank" rel="noopener noreferrer">Tim de Pater</a>

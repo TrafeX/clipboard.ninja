@@ -33,8 +33,7 @@ const style = {
   }
 };
 
-const Clipboard = (ownRoomNumber, connectedToRoom, usersInRoom, messages) => {
-  console.log('Loading Clipboard component');
+const Clipboard = ({ownRoomNumber, connectedToRoom, usersInRoom, messages}) => {
 
   const socket = useContext(SocketContext);
 

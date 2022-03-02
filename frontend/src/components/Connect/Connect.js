@@ -52,7 +52,6 @@ const Connect = ({ownRoomNumber, connectedToRoom, connectToRoom, muiTheme}) => {
     return null;
   }
 
-  console.log('Connect: room nr:', ownRoomNumber);
   if (ownRoomNumber === null) {
     ownRoomNumber = `Waiting for server connection.. ${spinnerChar}`;
   }

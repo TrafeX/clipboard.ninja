@@ -10,7 +10,6 @@ const useSocketClient = (socket) => {
 
   useEffect(() => {
 
-    console.log('Clipboard: useEffect');
     socket.on('connect_error', () => {
       setStatus('Connection to server failed');
       setOwnRoomNumber(null);
