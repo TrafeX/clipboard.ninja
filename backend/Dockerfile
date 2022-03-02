@@ -22,7 +22,7 @@ COPY . /usr/src/app
 
 RUN npm run build
 
-FROM node:16.10-alpine as production
+FROM node:16.14-alpine as production
 
 ENV NODE_ENV=production
 
