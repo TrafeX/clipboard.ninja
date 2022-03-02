@@ -69,7 +69,8 @@ jobs:
       - name: Deploy static site to S3 bucket
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |-
-            aws s3 sync ./build/ s3://clipboard.ninja --delete
-            aws s3 sync ./build/static s3://clipboard.ninja/static --cache-control max-age=31536000,public
+          aws s3 sync ./build/ s3://clipboard.ninja --delete --cache-control max-age=31536000,public
+          aws s3 cp s3://clipboard.ninja/index.html s3://clipboard.ninja/index.html --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type text/html
+          aws s3 cp s3://clipboard.ninja/service-worker.js s3://clipboard.ninja/service-worker.js --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type application/javascript
 
 
