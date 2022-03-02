@@ -1,4 +1,4 @@
-FROM node:16.10-alpine
+FROM node:16.14-alpine
 
 # Install gblibc for running flow
 RUN apk --no-cache add ca-certificates openssl && \
