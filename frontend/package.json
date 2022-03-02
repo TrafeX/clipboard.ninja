@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@datapunt/matomo-tracker-react": "^0.5.1",
+    "@material-ui/core": "^4.12.3",
     "log-timestamp": "^0.3.0",
     "material-ui": "^0.20.0",
     "most-awesome-spinner-ever": "^1.0.3",
@@ -79,7 +81,8 @@
     "build": "node scripts/build.js && react-snapshot",
     "test": "node scripts/test.js",
     "test-coverage": "node scripts/test.js --coverage --colors --env=jsdom",
-    "lint": "eslint ./src && flow check"
+    "lint": "eslint ./src && flow check",
+    "fix-code": "eslint --fix src/"
   },
   "eslintConfig": {
     "extends": "react-app"
