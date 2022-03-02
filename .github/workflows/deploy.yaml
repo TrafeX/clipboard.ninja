@@ -5,6 +5,9 @@ on:
     branches: [ master ]
   pull_request:
 
+env:
+  IMAGE_TAG: ${{ github.sha }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,23 +19,23 @@ jobs:
       - name: Build images
         run: |-
           docker build --target=build -t trafex/clipboard-backend:ci backend/
-          docker build -t trafex/clipboard-backend:latest backend/
-          docker build -t trafex/clipboard-frontend:latest frontend/
+          docker build -t trafex/clipboard-backend:$IMAGE_TAG backend/
+          docker build -t trafex/clipboard-frontend:$IMAGE_TAG frontend/
 
       - name: Test images
         run: |-
-          docker run -e CI=true -t --rm trafex/clipboard-frontend yarn lint
+          docker run -e CI=true -t --rm trafex/clipboard-frontend:$IMAGE_TAG yarn lint
           docker run -e CI=true -t --rm trafex/clipboard-backend:ci npm run eslint
-          docker run -e CI=true --rm trafex/clipboard-frontend yarn test-coverage
-          docker run -e CI=true -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend yarn build
-          docker run -d trafex/clipboard-backend
-          docker run -d trafex/clipboard-frontend
+          docker run -e CI=true --rm trafex/clipboard-frontend:$IMAGE_TAG yarn test-coverage
+          docker run -e CI=true -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend:$IMAGE_TAG yarn build
+          docker run -d trafex/clipboard-backend:$IMAGE_TAG
+          docker run -d trafex/clipboard-frontend:$IMAGE_TAG
           docker ps -a
 
       - name: Run Trivy vulnerability scanner on backend
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'trafex/clipboard-backend:latest'
+          image-ref: 'trafex/clipboard-backend:${{ env.IMAGE_TAG }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
@@ -52,6 +55,7 @@ jobs:
       - name: Push backend image
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |-
+          docker tag trafex/clipboard-backend:$IMAGE_TAG trafex/clipboard-backend:latest
           docker push trafex/clipboard-backend:latest
 
       - name: Configure AWS Credentials
