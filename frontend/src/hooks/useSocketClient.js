@@ -15,7 +15,6 @@ const useSocketClient = (socket) => {
       setOwnRoomNumber(null);
     });
     socket.on('message', (message: string) => {
-      console.log('Received message', message);
       setMessages(messages => [...messages, message]);
     });
     socket.on('registered', (room: number) => {
@@ -43,7 +42,7 @@ const useSocketClient = (socket) => {
 
     // return () => {
     //   console.log('Disconnecting');
-    //   // socket.disconnect();
+    //   socket.disconnect();
     // }
   }, [socket]);
 

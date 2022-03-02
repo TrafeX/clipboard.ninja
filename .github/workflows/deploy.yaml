@@ -71,6 +71,7 @@ jobs:
         run: |-
           aws s3 sync ./build/ s3://clipboard.ninja --delete --cache-control max-age=31536000,public
           aws s3 cp s3://clipboard.ninja/index.html s3://clipboard.ninja/index.html --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type text/html
+          aws s3 cp s3://clipboard.ninja/about.html s3://clipboard.ninja/about.html --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type text/html
           aws s3 cp s3://clipboard.ninja/service-worker.js s3://clipboard.ninja/service-worker.js --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type application/javascript
 
 
