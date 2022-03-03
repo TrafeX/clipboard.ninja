@@ -7,6 +7,8 @@ Or download the [Android App in the Play Store](https://play.google.com/store/ap
 
 See the [source of the Android app on GitHub](https://github.com/TrafeX/clipboard.ninja-app)
 
+![Clipboard.ninja](https://timdepater.com/projects/clipboard-ninja.png "Clipboard.ninja")
+
 ## Features
 
  * It's realtime; you'll see the text immediately appear on the receiving device.
