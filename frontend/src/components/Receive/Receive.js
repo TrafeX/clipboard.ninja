@@ -11,10 +11,10 @@ type Props = {
   receivedMessages: Array<string>,
 }
 
-const Receive = (props: Props) => (
+const Receive = ({receivedMessages}: Props) => (
   <div>
     <ul style={style.ul}>
-    { props.receivedMessages && props.receivedMessages.map((message, i) => {
+    { receivedMessages && receivedMessages.map((message, i) => {
       return <li key={i}><pre>{message}</pre></li>
     }) }
     </ul>

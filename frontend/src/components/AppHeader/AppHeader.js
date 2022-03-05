@@ -8,15 +8,15 @@ type Props = {
   history: Object,
   location: Location,
 };
-const AppHeader = (props: Props) => {
+const AppHeader = ({history, location}: Props) => {
   let navButton = <FlatButton label="Help" href="/about.html" onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    props.history.push('/about.html');
+    history.push('/about.html');
   }}/>;
-  if (props.location.pathname === '/about.html') {
+  if (location.pathname === '/about.html') {
     navButton = <FlatButton label="Back" href="/" onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      props.history.push('/');
+      history.push('/');
     }}/>;
   }
   return (
@@ -25,7 +25,7 @@ const AppHeader = (props: Props) => {
         title="Clipboard.ninja"
         iconElementLeft={<img src={ninjalogo} alt="logo" height="50px"/>}
         iconElementRight={navButton}
-        onTitleClick={() => props.history.push('/')}
+        onTitleClick={() => history.push('/')}
       />
     </div>
   );
