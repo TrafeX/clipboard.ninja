@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `ShallowWrapper {}`;
+exports[`renders without crashing 1`] = `
+<WithStyles(ForwardRef(Snackbar))
+  autoHideDuration={4000}
+  message="Testing"
+  onClose={[Function]}
+  open={true}
+/>
+`;

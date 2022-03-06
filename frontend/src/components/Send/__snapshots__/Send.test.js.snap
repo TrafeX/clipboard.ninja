@@ -1,3 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `ShallowWrapper {}`;
+exports[`renders without crashing 1`] = `
+<div>
+  <h3>
+    Connected to Device ID: 
+    <span
+      style={
+        Object {
+          "color": "#ff4081",
+        }
+      }
+    >
+      <strong />
+    </span>
+  </h3>
+  <p>
+    You're connected to the other device(s) and can start sending text!
+    <br />
+    <small>
+      It's possible to send to multiple devices by also connecting them to the Device Id above.
+    </small>
+  </p>
+  <TextField
+    disabled={false}
+    floatingLabelFixed={false}
+    floatingLabelText="Enter the text to send"
+    fullWidth={false}
+    multiLine={true}
+    onChange={[Function]}
+    rows={1}
+    style={
+      Object {
+        "textAlign": "left",
+      }
+    }
+    type="text"
+    underlineShow={true}
+    value=""
+  />
+  <br />
+  <RaisedButton
+    disabled={true}
+    fullWidth={false}
+    label="Send"
+    labelPosition="after"
+    onClick={[Function]}
+    primary={true}
+    secondary={false}
+    style={
+      Object {
+        "margin": 12,
+      }
+    }
+  />
+</div>
+`;

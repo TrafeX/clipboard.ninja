@@ -1,3 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `ShallowWrapper {}`;
+exports[`renders without crashing 1`] = `
+<div>
+  <h3>
+    Device ID: 
+    <span
+      style={
+        Object {
+          "color": "#ff4081",
+        }
+      }
+    >
+      <strong />
+    </span>
+  </h3>
+  <p>
+    Use the Device ID above to connect to the other device. Or enter the Device ID of the other device below.
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <TextField
+      disabled={false}
+      floatingLabelFixed={false}
+      floatingLabelText="Enter the device ID"
+      fullWidth={false}
+      multiLine={false}
+      onChange={[Function]}
+      rows={1}
+      type="number"
+      underlineShow={true}
+      value=""
+    />
+    <RaisedButton
+      disabled={false}
+      fullWidth={false}
+      label="Connect"
+      labelPosition="after"
+      primary={true}
+      secondary={false}
+      style={
+        Object {
+          "margin": 12,
+        }
+      }
+      type="submit"
+    />
+  </form>
+</div>
+`;

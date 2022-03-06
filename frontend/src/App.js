@@ -89,7 +89,7 @@ const App = () => {
     <MuiThemeProvider theme={muiTheme}>
       <V0MuiThemeProvider muiTheme={muiThemeV0}>
         <SocketContext.Provider value={socket}>
-          <div style={style.background}>
+          <div id="main" style={style.background}>
             <Helmet>
               <link rel="manifest" href="/manifest-v1.json" />
             </Helmet>
