@@ -6,7 +6,7 @@
   "repository": "https://github.com/trafex/clipboard.ninja",
   "dependencies": {
     "log-timestamp": "^0.3.0",
-    "socket.io": "^4.2.0"
+    "socket.io": "^4.5.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.31.2",
