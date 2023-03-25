@@ -5,7 +5,7 @@ require('log-timestamp');
 const httpServer = createServer();
 const io = new Server(httpServer, {
     cors: {
-        origin: ["http://localhost:3000", "https://clipboard.ninja"],
+        origin: ["http://localhost:3000", "http://localhost:3020", "https://clipboard.ninja", "https://clipboard-ninja.vercel.app"],
         methods: ["GET", "POST"],
         credentials: true,
     },
@@ -37,7 +37,7 @@ const randomInt = (low: number, high: number) => {
 io.on("connection", (socket: mySocket) => {
     const roomNr = randomInt(100000, 999999);
     if (roomNr instanceof Error) {
-        console.log('ERROR:', roomNr);
+        console.error('ERROR:', roomNr);
         return;
     }
     socket.roomNr = roomNr;

@@ -11,6 +11,19 @@ services:
     networks:
       - clipboard
 
+  frontend-ng:
+    build:
+      context: ./frontend-ng
+      target: dev
+    ports:
+      - "3020:3000"
+    environment:
+      BACKEND_SERVER: backend
+    volumes:
+      - "./frontend-ng:/usr/src/app"
+    networks:
+      - clipboard
+
   frontend:
     depends_on:
       - backend
