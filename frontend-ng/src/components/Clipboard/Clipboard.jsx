@@ -7,12 +7,12 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { push } from "@socialgouv/matomo-next";
 import { useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
 import Connect from "../Connect";
 import Receive from "../Receive";
 import Send from "../Send";
-// import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 const Clipboard = ({
   ownRoomNumber,
@@ -22,24 +22,14 @@ const Clipboard = ({
 }) => {
   const socket = useContext(SocketContext);
 
-  // const { trackEvent } = useMatomo();
-
   const sendMessage = (message) => {
     socket.emit("publish", message);
-    const event = {
-      category: "user-interaction",
-      action: "publish-message",
-    };
-    // trackEvent(event);
+    push(['trackEvent', 'user-interaction', 'publish-message']);
   };
 
   const connectToRoom = (room) => {
     socket.emit("join", room);
-    const event = {
-      category: "user-interaction",
-      action: "connect-to-device",
-    };
-    // trackEvent(event);
+    push(['trackEvent', 'user-interaction', 'connect-to-device']);
   };
 
   const cardBgColor = useColorModeValue("white", "gray.700");
