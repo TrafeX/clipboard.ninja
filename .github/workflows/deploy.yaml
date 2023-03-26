@@ -19,18 +19,13 @@ jobs:
       - name: Build images
         run: |-
           docker build --target=build -t trafex/clipboard-backend:ci backend/
+          docker build --target=build -t trafex/clipboard-frontend:ci frontend-ng/
           docker build -t trafex/clipboard-backend:$IMAGE_TAG backend/
-          docker build -t trafex/clipboard-frontend:$IMAGE_TAG frontend/
 
       - name: Test images
         run: |-
-          docker run -e CI=true -t --rm trafex/clipboard-frontend:$IMAGE_TAG yarn lint
-          docker run -e CI=true -t --rm trafex/clipboard-backend:ci npm run eslint
-          docker run -e CI=true --rm trafex/clipboard-frontend:$IMAGE_TAG yarn test-coverage
-          docker run -e CI=true -t --rm -v `pwd`/build:/usr/src/app/build trafex/clipboard-frontend:$IMAGE_TAG yarn build
-          docker run -d trafex/clipboard-backend:$IMAGE_TAG
-          docker run -d trafex/clipboard-frontend:$IMAGE_TAG
-          docker ps -a
+          docker run --rm trafex/clipboard-frontend:ci npm run lint
+          docker run --rm trafex/clipboard-backend:ci npm run eslint
 
       - name: Run Trivy vulnerability scanner on backend
         uses: aquasecurity/trivy-action@master
@@ -58,20 +53,11 @@ jobs:
           docker tag trafex/clipboard-backend:$IMAGE_TAG trafex/clipboard-backend:latest
           docker push trafex/clipboard-backend:latest
 
-      - name: Configure AWS Credentials
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-1
-
-      - name: Deploy static site to S3 bucket
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: |-
-          aws s3 sync ./build/ s3://clipboard.ninja --delete --cache-control max-age=31536000,public
-          aws s3 cp s3://clipboard.ninja/index.html s3://clipboard.ninja/index.html --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type text/html
-          aws s3 cp s3://clipboard.ninja/about.html s3://clipboard.ninja/about.html --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type text/html
-          aws s3 cp s3://clipboard.ninja/service-worker.js s3://clipboard.ninja/service-worker.js --metadata-directive REPLACE --cache-control no-cache,no-store,must-revalidate --content-type application/javascript
-
-
+      - name: Deploy frontend to production
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm install --global vercel@latest
+          cd frontend-ng/
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}

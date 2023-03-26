@@ -1,4 +1,5 @@
 import { Box, ChakraProvider, extendTheme, Link } from '@chakra-ui/react';
+import { init } from "@socialgouv/matomo-next";
 import { Analytics } from '@vercel/analytics/react';
 import AppHeader from 'components/AppHeader';
 import { socket, SocketContext } from 'context/SocketContext';
@@ -6,7 +7,6 @@ import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import NextLink from 'next/link';
 import { useEffect } from 'react';
-import { init } from "@socialgouv/matomo-next";
 
 const theme = extendTheme({
   components: {
@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <SocketContext.Provider value={socket}>
           <DefaultSeo
-            title="Clipboard.ninja"
+            title="Clipboard.ninja - Quick and secure way to share text, urls, snippets, passwords, etc. between devices"
             description="Realtime clipboard to quickly and securely share text between different (mobile) devices"
             themeColor="#ef6c00"
             additionalLinkTags={[
@@ -58,6 +58,10 @@ export default function App({ Component, pageProps }: AppProps) {
               {
                 name: 'apple-mobile-web-capable',
                 content: 'yes',
+              },
+              {
+                name: 'apple-mobile-web-app-title',
+                content: 'Clipboard.ninja',
               },
               {
                 name: 'application-name',
