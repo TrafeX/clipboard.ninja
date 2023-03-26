@@ -4,6 +4,7 @@ import { Box, ChakraProvider, extendTheme, Link } from '@chakra-ui/react';
 import AppHeader from 'components/AppHeader';
 import { socket, SocketContext } from 'context/SocketContext';
 import NextLink from 'next/link';
+import { DefaultSeo } from 'next-seo';
 
 const theme = extendTheme({
   components: {
@@ -33,6 +34,18 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
       <ChakraProvider theme={theme}>
         <SocketContext.Provider value={socket}>
+
+          <DefaultSeo
+            title="Clipboard.ninja"
+            description="Realtime clipboard to quickly and securely share text between different (mobile) devices"
+            additionalLinkTags={[
+              {
+                rel: 'manifest',
+                href: '/manifest.json',
+              }
+            ]}
+
+          />
           <AppHeader />
           <Component {...pageProps} />
           <Box as={'footer'} px={2} fontSize={'sm'} color='gray.400'>

@@ -1,6 +1,11 @@
 import {
-  Card, CardBody, CardHeader,
-  Heading, SimpleGrid, Text, useColorModeValue
+  Card,
+  CardBody,
+  CardHeader,
+  Heading,
+  SimpleGrid,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
@@ -47,10 +52,11 @@ const Clipboard = ({
         p={{ sm: 3, md: 5 }}
         rounded={"md"}
       >
-        <CardHeader pb={{base: 0, lg: 1}}>
+        <CardHeader pb={{ base: 0, lg: 1 }}>
           <Heading size="md">Connect & send</Heading>
           <Text fontSize={"sm"}>
-            Open this app on both devices and connect to the other device by entering the Device ID
+            Open this app on both devices and connect to the other device by
+            entering the Device ID
           </Text>
         </CardHeader>
         <CardBody>
@@ -67,7 +73,7 @@ const Clipboard = ({
         </CardBody>
       </Card>
       <Card boxShadow={"lg"} p={5} rounded={"md"}>
-        <CardHeader pb={{base: 0, lg: 1}}>
+        <CardHeader pb={{ base: 0, lg: 1 }}>
           <Heading size="md">Received text</Heading>
           <Text fontSize={"sm"}>
             Once connected, the text you receive from the other device will be

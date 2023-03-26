@@ -1,13 +1,13 @@
 import {
-  Box, Flex,
+  Box,
+  Flex,
   Heading,
   HStack,
   IconButton,
   Image,
   Link,
   useColorMode,
-  useColorModeValue,
-  useDisclosure
+  useColorModeValue
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
