@@ -12,10 +12,6 @@ const useSocketClient = (socket) => {
   useEffect(() => {
 
     socket.connect();
-    console.log('UseEffect in useSocketClient');
-    socket.on('connect', () => {
-      console.log('Connected to server');
-    });
     socket.on('connect_error', () => {
       toast({
         title: "Connection to server failed",
@@ -30,7 +26,6 @@ const useSocketClient = (socket) => {
       setMessages(messages => [...messages, message]);
     });
     socket.on('registered', (room) => {
-      console.log('Registered', room);
       setOwnRoomNumber(room);
     });
     socket.on('subscribed', (room, usersInRoom) => {
@@ -71,7 +66,6 @@ const useSocketClient = (socket) => {
     });
 
     return () => {
-      console.log('Unmount useSocketClient');
       socket.off('connect');
       socket.off('connect_error');
       socket.off('message');
@@ -82,6 +76,7 @@ const useSocketClient = (socket) => {
 
       socket.disconnect();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {ownRoomNumber, connectedToRoom, usersInRoom, messages};

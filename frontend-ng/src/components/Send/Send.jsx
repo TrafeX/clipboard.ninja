@@ -15,7 +15,6 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
   const [message, setMessage] = useState("");
 
   const subtextColor = useColorModeValue("gray.600", "gray.400");
-  const buttonColor = useColorModeValue("brand.600", "brand.800");
 
   const sendThisMessage = () => {
     sendMessage(message);
@@ -30,10 +29,6 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
     return null;
   }
 
-  let moreUsersInRoom = null;
-  if (usersInRoom > 2) {
-    moreUsersInRoom = ` with ${usersInRoom - 1} devices`;
-  }
   return (
     <Box>
       <Box>
@@ -41,7 +36,7 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
           Connected to Device
         </Heading>
         <Text fontSize={"sm"} color={subtextColor}>
-          You are connected to the other device and can send text.
+          You are connected to the other {usersInRoom > 2 ? `${usersInRoom-1} devices` : 'device'} and can send text.
         </Text>
         <Text fontSize={"2xl"} fontWeight={"extrabold"} color={"brand.800"}>
           {connectedToRoom}
@@ -56,12 +51,11 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
         <Button
           type="submit"
           label="Send"
-          color={"white"}
-          bgColor={buttonColor}
+          colorScheme={"brand"}
           alignSelf="flex-start"
           my={2}
           onClick={() => sendThisMessage()}
-          disabled={message === ""}
+          isDisabled={message.length === 0}
         >
           Send
         </Button>

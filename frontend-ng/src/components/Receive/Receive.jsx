@@ -4,11 +4,9 @@ import {
   Flex,
   List,
   ListIcon,
-  ListItem,
-  UnorderedList,
+  ListItem
 } from "@chakra-ui/react";
 import { IoReturnDownForwardSharp } from "react-icons/io5";
-import React from "react";
 
 const Receive = ({ receivedMessages }) => (
   <Box>
@@ -19,7 +17,7 @@ const Receive = ({ receivedMessages }) => (
             <ListItem key={i}>
               <Flex direction="row">
                 <ListIcon as={IoReturnDownForwardSharp} color={"brand.600"} />
-                <Code>{message}</Code>
+                <Code style={{whiteSpace: "pre-wrap"}}>{message}</Code>
               </Flex>
             </ListItem>
           );

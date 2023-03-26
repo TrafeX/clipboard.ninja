@@ -1,17 +1,12 @@
-import React, { useContext } from "react";
-import Send from "../Send";
-import Receive from "../Receive";
-import Connect from "../Connect";
 import {
-  Card,
-  CardHeader,
-  Heading,
-  CardBody,
-  Text,
-  SimpleGrid,
-  useColorModeValue,
+  Card, CardBody, CardHeader,
+  Heading, SimpleGrid, Text, useColorModeValue
 } from "@chakra-ui/react";
+import { useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
+import Connect from "../Connect";
+import Receive from "../Receive";
+import Send from "../Send";
 // import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 const Clipboard = ({
@@ -55,8 +50,7 @@ const Clipboard = ({
         <CardHeader pb={{base: 0, lg: 1}}>
           <Heading size="md">Connect & send</Heading>
           <Text fontSize={"sm"}>
-            First you need to connect to the other device by entering the Device
-            ID
+            Open this app on both devices and connect to the other device by entering the Device ID
           </Text>
         </CardHeader>
         <CardBody>

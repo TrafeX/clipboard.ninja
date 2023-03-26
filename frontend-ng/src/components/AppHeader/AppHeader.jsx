@@ -1,7 +1,5 @@
 import {
-  Box,
-  Button,
-  Flex,
+  Box, Flex,
   Heading,
   HStack,
   IconButton,
@@ -9,7 +7,7 @@ import {
   Link,
   useColorMode,
   useColorModeValue,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -19,7 +17,6 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import ninjalogo from "./ninja.svg";
 
 const AppHeader = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const textColor = useColorModeValue("white", "gray.800");
   const router = useRouter();
@@ -27,7 +24,7 @@ const AppHeader = () => {
   return (
     <>
       <Box
-        bg={"brand.600"}
+        bg={"brand.500"}
         px={4}
         position={"sticky"}
         top={0}
@@ -54,9 +51,13 @@ const AppHeader = () => {
             </Heading>
           </HStack>
           <HStack alignItems={"center"} spacing={2}>
-            {router.asPath !== '/' && <Link as={NextLink} color={textColor} href={'/'}>Go back</Link>}
+            {router.asPath !== "/" && (
+              <Link as={NextLink} color={textColor} href={"/"}>
+                Go back
+              </Link>
+            )}
 
-            <NextLink href={'/about'}>
+            <NextLink href={router.asPath === "/about" ? "/" : "/about"}>
               <IconButton
                 bg={"gray.100"}
                 color={"gray.800"}

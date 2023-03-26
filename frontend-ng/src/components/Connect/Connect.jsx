@@ -12,16 +12,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-const Connect = ({
-  ownRoomNumber,
-  connectedToRoom,
-  connectToRoom,
-  muiTheme,
-}) => {
+const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
   const [roomNumber, setRoomNumber] = useState("");
 
   const subtextColor = useColorModeValue("gray.600", "gray.400");
-  const buttonColor = useColorModeValue("brand.600", "brand.800");
 
   const handleConnectToRoom = (event) => {
     event.preventDefault();
@@ -59,7 +53,7 @@ const Connect = ({
           ) : (
             <Text fontSize={"md"} fontWeight={"extrabold"} color={"brand.800"}>
               Waiting for connection to server..
-              <Spinner ml={1} size={"sm"} color={"brand.800"} />
+              <Spinner as={"span"} ml={1} size={"sm"} color={"brand.800"} />
             </Text>
           )}
         </Box>
@@ -99,8 +93,7 @@ const Connect = ({
               <Button
                 type="submit"
                 label="Connect"
-                color={"white"}
-                bgColor={buttonColor}
+                colorScheme={"brand"}
                 alignSelf="flex-end"
                 mx={2}
                 disabled={roomNumber === null}
