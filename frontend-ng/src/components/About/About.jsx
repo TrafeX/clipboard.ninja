@@ -1,15 +1,14 @@
-import React from "react";
 import {
-  SimpleGrid,
   Card,
-  CardHeader,
   CardBody,
-  Text,
+  CardHeader,
+  Heading,
   Link,
   ListItem,
-  useColorModeValue,
-  Heading,
+  SimpleGrid,
+  Text,
   UnorderedList,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const About = () => {

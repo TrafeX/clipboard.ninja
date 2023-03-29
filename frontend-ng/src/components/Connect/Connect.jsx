@@ -16,6 +16,7 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
   const [roomNumber, setRoomNumber] = useState("");
 
   const subtextColor = useColorModeValue("gray.600", "gray.400");
+  const inputColor = useColorModeValue("gray.500", "gray.500");
 
   const handleConnectToRoom = (event) => {
     event.preventDefault();
@@ -27,7 +28,6 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
   };
 
   const handleChange = (event) => {
-    console.log(event.target);
     setRoomNumber(event.target.value);
   };
 
@@ -71,10 +71,12 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
                 <NumberInput
                   name="roomNr"
                   defaultValue={roomNumber}
-                  disabled={ownRoomNumber === null}
+                  isDisabled={ownRoomNumber === null}
                 >
                   <NumberInputField
                     onChange={handleChange}
+                    _placeholder={{ color: "gray.500" }}
+                    borderColor={inputColor}
                     placeholder={"Enter Device ID"}
                   />
                 </NumberInput>

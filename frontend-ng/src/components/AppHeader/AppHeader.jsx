@@ -7,7 +7,7 @@ import {
   Image,
   Link,
   useColorMode,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";

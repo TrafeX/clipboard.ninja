@@ -24,12 +24,12 @@ const Clipboard = ({
 
   const sendMessage = (message) => {
     socket.emit("publish", message);
-    push(['trackEvent', 'user-interaction', 'publish-message']);
+    push(["trackEvent", "user-interaction", "publish-message"]);
   };
 
   const connectToRoom = (room) => {
     socket.emit("join", room);
-    push(['trackEvent', 'user-interaction', 'connect-to-device']);
+    push(["trackEvent", "user-interaction", "connect-to-device"]);
   };
 
   const cardBgColor = useColorModeValue("white", "gray.700");
