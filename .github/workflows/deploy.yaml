@@ -7,6 +7,7 @@ on:
 
 env:
   IMAGE_TAG: ${{ github.sha }}
+  DOCKER_BUILDKIT: 1
 
 jobs:
   deploy:
@@ -18,9 +19,11 @@ jobs:
 
       - name: Build images
         run: |-
+          docker pull trafex/trafex/clipboard-backend:ci || true
+          docker pull trafex/trafex/clipboard-frontend:ci || true
           docker build --target=build -t trafex/clipboard-backend:ci backend/
           docker build --target=build -t trafex/clipboard-frontend:ci frontend-ng/
-          docker build -t trafex/clipboard-backend:$IMAGE_TAG backend/
+          docker build --cache-from=trafex/clipboard-backend:latest -t trafex/clipboard-backend:$IMAGE_TAG backend/
 
       - name: Test images
         run: |-
