@@ -6,14 +6,14 @@
   "repository": "https://github.com/trafex/clipboard.ninja",
   "dependencies": {
     "log-timestamp": "^0.3.0",
-    "socket.io": "^4.5.4"
+    "socket.io": "^4.6.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "^8.28.0",
-    "nodemon": "^2.0.20",
-    "npm-check-updates": "^16.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "nodemon": "^2.0.22",
+    "npm-check-updates": "^16.9.0",
     "prettier-eslint": "^15.0.1",
     "prettier-eslint-cli": "^7.1.0",
     "ts-node": "^10.9.1",
