@@ -23,4 +23,4 @@ You can run a local version with Docker:
 
     docker-compose up
 
-Go to [http://localhost:3000]()
+Go to [http://localhost:3020]()

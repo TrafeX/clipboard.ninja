@@ -24,20 +24,6 @@ services:
     networks:
       - clipboard
 
-  frontend:
-    depends_on:
-      - backend
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"
-    environment:
-      BACKEND_SERVER: backend
-    volumes:
-      - "./frontend:/usr/src/app"
-    networks:
-      - clipboard
-
 networks:
   clipboard:
     driver: bridge
