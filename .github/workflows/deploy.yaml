@@ -50,11 +50,13 @@ jobs:
         with:
           sarif_file: "trivy-results.sarif"
 
-      - name: Push backend image
+      - name: Push images
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |-
           docker tag trafex/clipboard-backend:$IMAGE_TAG trafex/clipboard-backend:latest
           docker push trafex/clipboard-backend:latest
+          docker tag trafex/clipboard-frontend:$IMAGE_TAG trafex/clipboard-frontend:latest
+          docker push trafex/clipboard-frontend:latest
 
       - name: Deploy frontend to production
         env:
