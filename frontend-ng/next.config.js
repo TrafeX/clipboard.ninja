@@ -30,6 +30,20 @@ const nextConfig = withPWA({
         ],
       },
     ]
+  },
+  redirects: async () => {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/about.html',
+        destination: '/about',
+        permanent: true,
+      },
+    ]
   }
 })
 
