@@ -28,9 +28,23 @@ jobs:
         run: |-
           docker pull trafex/clipboard-backend:latest || true
           docker pull trafex/clipboard-frontend:latest || true
-          docker build --cache-from=trafex/clipboard-backend:latest --target=build -t trafex/clipboard-backend:ci backend/
-          docker build --cache-from=trafex/clipboard-frontend:latest --target=build -t trafex/clipboard-frontend:ci frontend-ng/
-          docker build --cache-from=trafex/clipboard-backend:latest -t trafex/clipboard-backend:$IMAGE_TAG backend/
+          docker build \
+            --cache-from=trafex/clipboard-backend:latest \
+            --target=build \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            -t trafex/clipboard-backend:ci \
+            backend/
+          docker build \
+            --cache-from=trafex/clipboard-frontend:latest \
+            --target=build \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            -t trafex/clipboard-frontend:ci \
+            frontend-ng/
+          docker build \
+            --cache-from=trafex/clipboard-backend:latest \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            -t trafex/clipboard-backend:$IMAGE_TAG \
+            backend/
 
       - name: Test images
         run: |-
