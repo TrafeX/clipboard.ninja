@@ -1,6 +1,5 @@
 import { Box, ChakraProvider, extendTheme, Link } from "@chakra-ui/react";
 import { init } from "@socialgouv/matomo-next";
-import { Analytics } from "@vercel/analytics/react";
 import AppHeader from "components/AppHeader";
 import { socket, SocketContext } from "context/SocketContext";
 import { DefaultSeo } from "next-seo";
@@ -93,7 +92,6 @@ export default function App({ Component, pageProps }: AppProps) {
             Tim de Pater
           </Link>
         </Box>
-        <Analytics />
       </SocketContext.Provider>
     </ChakraProvider>
   );
