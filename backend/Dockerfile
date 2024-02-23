@@ -1,7 +1,9 @@
-FROM node:18-alpine as base
+FROM node:20-alpine as base
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
+RUN npm install -g npm-check-updates
 
 EXPOSE 3001
 
@@ -22,7 +24,7 @@ COPY . /usr/src/app
 
 RUN npm run build
 
-FROM node:18-alpine as production
+FROM node:20-alpine as production
 
 ENV NODE_ENV=production
 
