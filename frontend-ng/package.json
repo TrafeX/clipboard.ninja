@@ -36,6 +36,6 @@
     "eslint-config-prettier": "^9.1.0",
     "npm-check-updates": "^16.14.15",
     "prettier": "^3.2.5",
-    "vercel": "^32.3.0"
+    "vercel": "^39.2.2"
   }
 }
