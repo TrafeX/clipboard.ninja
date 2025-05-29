@@ -21,6 +21,6 @@ See the [source of the Android app on GitHub](https://github.com/TrafeX/clipboar
 
 You can run a local version with Docker:
 
-    docker-compose up
+    docker compose up
 
 Go to [http://localhost:3020]()

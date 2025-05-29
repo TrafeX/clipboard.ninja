@@ -89,7 +89,12 @@ export default function App({ Component, pageProps }: AppProps) {
             Source on GitHub
           </Link>{" "}
           - Created by{" "}
-          <Link href="https://www.timdepater.com" as={NextLink} target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://timdepater.com?mtm_source=clipboard.ninja"
+            as={NextLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tim de Pater
           </Link>
         </Box>
