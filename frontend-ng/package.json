@@ -13,29 +13,29 @@
   "dependencies": {
     "@chakra-ui/react": "^2.10.9",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@socialgouv/matomo-next": "^1.9.2",
     "@types/node": "22.15.24",
-    "@types/react": "19.1.6",
-    "@types/react-dom": "19.1.5",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
     "@vercel/analytics": "^1.5.0",
     "eslint": "8.57.1",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "15.5.4",
     "framer-motion": "^11.18.2",
-    "next": "15.5.2",
+    "next": "15.5.4",
     "next-pwa": "^5.6.0",
     "next-seo": "^6.8.0",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "react-icons": "^5.5.0",
     "socket.io-client": "^4.8.1",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "eslint-config-prettier": "^9.1.0",
-    "npm-check-updates": "^18.0.1",
-    "prettier": "^3.5.3",
+    "npm-check-updates": "^18.3.0",
+    "prettier": "^3.6.2",
     "vercel": "^42.2.0"
   }
 }
