@@ -34,7 +34,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "eslint-config-prettier": "^9.1.0",
-    "npm-check-updates": "^18.3.0",
+    "npm-check-updates": "^19.0.0",
     "prettier": "^3.6.2",
     "vercel": "^42.2.0"
   }
