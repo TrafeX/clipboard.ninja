@@ -1,5 +1,5 @@
 import { Box, ChakraProvider, extendTheme, Link } from "@chakra-ui/react";
-import { init } from "@socialgouv/matomo-next";
+import { trackPagesRouter } from "@socialgouv/matomo-next";
 import { Analytics } from "@vercel/analytics/react";
 import AppHeader from "components/AppHeader";
 import { socket, SocketContext } from "context/SocketContext";
@@ -33,7 +33,7 @@ const theme = extendTheme({
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    init({ url: "https://matomo.trafex.nl", siteId: "2" });
+    trackPagesRouter({ url: "https://matomo.trafex.nl", siteId: "2" });
   }, []);
 
   return (
