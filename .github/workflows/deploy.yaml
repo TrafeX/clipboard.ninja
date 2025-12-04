@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Login to Docker Hub
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
