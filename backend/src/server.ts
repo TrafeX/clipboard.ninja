@@ -1,6 +1,6 @@
 import { createServer } from "http";
 import { Server, Socket } from "socket.io";
-require('log-timestamp');
+import 'log-timestamp';
 
 const httpServer = createServer();
 const io = new Server(httpServer, {
@@ -11,15 +11,12 @@ const io = new Server(httpServer, {
     },
 });
 
-interface roomIds {
-    [index: string]: number;
-}
 interface mySocket extends Socket {
     roomNr?: number;
     roomId?: string;
 }
 
-const roomIds = {} as roomIds;
+const roomIds: { [index: string]: number } = {};
 let nrUsers = 0;
 
 const randomInt = (low: number, high: number) => {

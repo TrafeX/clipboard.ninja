@@ -2,7 +2,6 @@ import { useToast } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 const useSocketClient = (socket) => {
-
   const [messages, setMessages] = useState([]);
   const [ownRoomNumber, setOwnRoomNumber] = useState(null);
   const [connectedToRoom, setConnectedToRoom] = useState(null);
@@ -10,25 +9,24 @@ const useSocketClient = (socket) => {
   const toast = useToast();
 
   useEffect(() => {
-
     socket.connect();
-    socket.on('connect_error', () => {
+    socket.on("connect_error", () => {
       toast({
         title: "Connection to server failed",
         description: "Please try again later",
         status: "error",
         duration: 9000,
         isClosable: true,
-      })
+      });
       setOwnRoomNumber(null);
     });
-    socket.on('message', (message) => {
-      setMessages(messages => [...messages, message]);
+    socket.on("message", (message) => {
+      setMessages((messages) => [...messages, message]);
     });
-    socket.on('registered', (room) => {
+    socket.on("registered", (room) => {
       setOwnRoomNumber(room);
     });
-    socket.on('subscribed', (room, usersInRoom) => {
+    socket.on("subscribed", (room, usersInRoom) => {
       setOwnRoomNumber(room);
       setConnectedToRoom(room);
       setUsersInRoom(usersInRoom);
@@ -40,7 +38,7 @@ const useSocketClient = (socket) => {
         isClosable: true,
       });
     });
-    socket.on('unsubscribed', (usersInRoom) => {
+    socket.on("unsubscribed", (usersInRoom) => {
       if (usersInRoom <= 1) {
         // Only one left in room
         toast({
@@ -54,32 +52,31 @@ const useSocketClient = (socket) => {
       }
       setUsersInRoom(usersInRoom);
     });
-    socket.on('deviceid-not-exists', () => {
+    socket.on("deviceid-not-exists", () => {
       toast({
         title: "Device ID doesn't exists",
         description: "Enter the device ID of the other device",
         status: "error",
         duration: 9000,
         isClosable: true,
-      })
+      });
       setConnectedToRoom(null);
     });
 
     return () => {
-      socket.off('connect');
-      socket.off('connect_error');
-      socket.off('message');
-      socket.off('registered');
-      socket.off('subscribed');
-      socket.off('unsubscribed');
-      socket.off('deviceid-not-exists');
+      socket.off("connect");
+      socket.off("connect_error");
+      socket.off("message");
+      socket.off("registered");
+      socket.off("subscribed");
+      socket.off("unsubscribed");
+      socket.off("deviceid-not-exists");
 
       socket.disconnect();
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    };
   }, []);
 
-  return {ownRoomNumber, connectedToRoom, usersInRoom, messages};
-}
+  return { ownRoomNumber, connectedToRoom, usersInRoom, messages };
+};
 
 export default useSocketClient;
