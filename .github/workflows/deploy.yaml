@@ -39,7 +39,7 @@ jobs:
             --target=build \
             --build-arg BUILDKIT_INLINE_CACHE=1 \
             -t trafex/clipboard-frontend:ci \
-            frontend-ng/
+            frontend/
           docker build \
             --cache-from=trafex/clipboard-backend:latest \
             --build-arg BUILDKIT_INLINE_CACHE=1 \
@@ -79,5 +79,5 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           npm install --global vercel@latest
-          cd frontend-ng/
+          cd frontend/
           vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}

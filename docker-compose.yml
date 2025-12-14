@@ -10,16 +10,16 @@ services:
     networks:
       - clipboard
 
-  frontend-ng:
+  frontend:
     build:
-      context: ./frontend-ng
+      context: ./frontend
       target: dev
     ports:
       - "3020:3000"
     environment:
       BACKEND_SERVER: backend
     volumes:
-      - "./frontend-ng:/usr/src/app"
+      - "./frontend:/usr/src/app"
     networks:
       - clipboard
 

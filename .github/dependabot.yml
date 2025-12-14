@@ -8,7 +8,7 @@ updates:
       interval: "weekly"
   - package-ecosystem: "npm"
     directories:
-      - "/frontend-ng"
+      - "/frontend"
       - "/backend"
     cooldown:
       default-days: 5
@@ -21,7 +21,7 @@ updates:
           - "minor"
   - package-ecosystem: "docker"
     directories:
-      - "/frontend-ng"
+      - "/frontend"
       - "/backend"
     cooldown:
       default-days: 5
