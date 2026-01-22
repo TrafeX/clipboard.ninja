@@ -15,7 +15,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@socialgouv/matomo-next": "^1.11.0",
-    "@types/node": "25.0.5",
+    "@types/node": "25.0.9",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@vercel/analytics": "^1.6.1",
@@ -38,8 +38,8 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "npm-check-updates": "^19.3.1",
-    "prettier": "^3.7.4",
-    "vercel": "^50.4.0"
+    "prettier": "^3.8.0",
+    "vercel": "^50.4.5"
   },
   "overrides": {
     "@types/react": "19.2.7",
