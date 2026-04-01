@@ -1,4 +1,4 @@
-FROM node:24-alpine as base
+FROM node:24-alpine AS base
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -7,11 +7,11 @@ RUN npm install -g npm-check-updates
 
 EXPOSE 3001
 
-FROM base as dev
+FROM base AS dev
 
 CMD ["npm", "run", "develop"]
 
-FROM base as build
+FROM base AS build
 
 WORKDIR /usr/src/app
 
@@ -24,7 +24,7 @@ COPY . /usr/src/app
 
 RUN npm run build
 
-FROM node:24-alpine as production
+FROM node:24-alpine AS production
 
 ENV NODE_ENV=production
 
