@@ -37,7 +37,7 @@
     "@typescript-eslint/parser": "^8.49.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "npm-check-updates": "^20.0.1",
+    "npm-check-updates": "^21.0.2",
     "prettier": "^3.8.2",
     "vercel": "^50.37.3"
   },
