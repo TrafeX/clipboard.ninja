@@ -38,7 +38,7 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "npm-check-updates": "^20.0.1",
-    "prettier": "^3.8.2",
+    "prettier": "^3.8.3",
     "vercel": "^50.37.3"
   },
   "overrides": {
