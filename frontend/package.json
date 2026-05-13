@@ -39,7 +39,7 @@
     "eslint-config-prettier": "^10.1.8",
     "npm-check-updates": "^21.0.2",
     "prettier": "^3.8.3",
-    "vercel": "^50.37.3"
+    "vercel": "^52.2.0"
   },
   "overrides": {
     "@types/react": "19.2.14",
