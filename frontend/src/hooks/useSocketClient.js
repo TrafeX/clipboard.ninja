@@ -1,4 +1,4 @@
-import { useToast } from "@chakra-ui/react";
+import { toaster } from "components/ui/toaster";
 import { useEffect, useState } from "react";
 
 const useSocketClient = (socket) => {
@@ -6,17 +6,16 @@ const useSocketClient = (socket) => {
   const [ownRoomNumber, setOwnRoomNumber] = useState(null);
   const [connectedToRoom, setConnectedToRoom] = useState(null);
   const [usersInRoom, setUsersInRoom] = useState(0);
-  const toast = useToast();
 
   useEffect(() => {
     socket.connect();
     socket.on("connect_error", () => {
-      toast({
+      toaster.create({
         title: "Connection to server failed",
         description: "Please try again later",
-        status: "error",
+        type: "error",
         duration: 9000,
-        isClosable: true,
+        closable: true,
       });
       setOwnRoomNumber(null);
     });
@@ -30,35 +29,35 @@ const useSocketClient = (socket) => {
       setOwnRoomNumber(room);
       setConnectedToRoom(room);
       setUsersInRoom(usersInRoom);
-      toast({
+      toaster.create({
         title: "Connected to device",
         description: `Connected to device with ID ${room}`,
-        status: "success",
+        type: "success",
         duration: 3000,
-        isClosable: true,
+        closable: true,
       });
     });
     socket.on("unsubscribed", (usersInRoom) => {
       if (usersInRoom <= 1) {
         // Only one left in room
-        toast({
+        toaster.create({
           title: "The other device has disconnected",
           description: "Please connect to another device",
-          status: "warning",
+          type: "warning",
           duration: 9000,
-          isClosable: true,
+          closable: true,
         });
         setConnectedToRoom(null);
       }
       setUsersInRoom(usersInRoom);
     });
     socket.on("deviceid-not-exists", () => {
-      toast({
+      toaster.create({
         title: "Device ID doesn't exists",
         description: "Enter the device ID of the other device",
-        status: "error",
+        type: "error",
         duration: 9000,
-        isClosable: true,
+        closable: true,
       });
       setConnectedToRoom(null);
     });

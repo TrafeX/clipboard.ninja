@@ -6,9 +6,8 @@ import {
   IconButton,
   Image,
   Link,
-  useColorMode,
-  useColorModeValue,
 } from "@chakra-ui/react";
+import { useColorMode } from "components/ui/color-mode";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -18,7 +17,6 @@ import ninjalogo from "./ninja.svg";
 
 const AppHeader = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const textColor = useColorModeValue("white", "gray.800");
   const router = useRouter();
 
   return (
@@ -32,7 +30,7 @@ const AppHeader = () => {
         zIndex={2}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <HStack alignItems={"center"} spacing={1}>
+          <HStack alignItems={"center"} gap={1}>
             <Image
               src={ninjalogo}
               alt="Clipboard.ninja"
@@ -43,16 +41,16 @@ const AppHeader = () => {
             <Heading
               as={NextLink}
               href={"/"}
-              color={textColor}
+              color={"headerText"}
               fontWeight={"normal"}
               size={"md"}
             >
               Clipboard.ninja
             </Heading>
           </HStack>
-          <HStack alignItems={"center"} spacing={2}>
+          <HStack alignItems={"center"} gap={2}>
             {router.asPath !== "/" && (
-              <Link as={NextLink} color={textColor} href={"/"}>
+              <Link as={NextLink} color={"headerText"} href={"/"}>
                 Go back
               </Link>
             )}
@@ -65,10 +63,11 @@ const AppHeader = () => {
                   bg: "gray.300",
                 }}
                 size={"sm"}
-                icon={<IoHelp />}
                 title={"Go to help"}
                 aria-label={"Go to help"}
-              />
+              >
+                <IoHelp />
+              </IconButton>
             </NextLink>
             <IconButton
               bg={"gray.100"}
@@ -77,11 +76,12 @@ const AppHeader = () => {
                 bg: "gray.300",
               }}
               size={"sm"}
-              icon={colorMode === "light" ? <MdDarkMode /> : <MdLightMode />}
               title={"Change Color Theme"}
               aria-label={"Change Color Theme"}
               onClick={toggleColorMode}
-            />
+            >
+              {colorMode === "light" ? <MdDarkMode /> : <MdLightMode />}
+            </IconButton>
           </HStack>
         </Flex>
       </Box>

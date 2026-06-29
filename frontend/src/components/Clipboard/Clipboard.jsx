@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Heading,
-  SimpleGrid,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Card, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import { push } from "@socialgouv/matomo-next";
 import { useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
@@ -32,24 +24,17 @@ const Clipboard = ({
     push(["trackEvent", "user-interaction", "connect-to-device"]);
   };
 
-  const cardBgColor = useColorModeValue("white", "gray.700");
-
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} padding={8}>
-      <Card
-        bg={cardBgColor}
-        boxShadow={"lg"}
-        p={{ sm: 3, md: 5 }}
-        rounded={"md"}
-      >
-        <CardHeader pb={{ base: 0, lg: 1 }}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} gap={8} padding={8}>
+      <Card.Root boxShadow={"lg"} p={{ sm: 3, md: 5 }} rounded={"md"}>
+        <Card.Header pb={{ base: 0, lg: 1 }}>
           <Heading size="md">Connect & send</Heading>
           <Text fontSize={"sm"}>
             Open this app on both devices and connect to the other device by
             entering the Device ID
           </Text>
-        </CardHeader>
-        <CardBody>
+        </Card.Header>
+        <Card.Body>
           <Connect
             ownRoomNumber={ownRoomNumber}
             connectedToRoom={connectedToRoom}
@@ -60,20 +45,20 @@ const Clipboard = ({
             sendMessage={sendMessage}
             usersInRoom={usersInRoom}
           />
-        </CardBody>
-      </Card>
-      <Card boxShadow={"lg"} p={5} rounded={"md"}>
-        <CardHeader pb={{ base: 0, lg: 1 }}>
+        </Card.Body>
+      </Card.Root>
+      <Card.Root boxShadow={"lg"} p={5} rounded={"md"}>
+        <Card.Header pb={{ base: 0, lg: 1 }}>
           <Heading size="md">Received text</Heading>
           <Text fontSize={"sm"}>
             Once connected, the text you receive from the other device will be
             shown here
           </Text>
-        </CardHeader>
-        <CardBody>
+        </Card.Header>
+        <Card.Body>
           <Receive receivedMessages={messages} />
-        </CardBody>
-      </Card>
+        </Card.Body>
+      </Card.Root>
     </SimpleGrid>
   );
 };

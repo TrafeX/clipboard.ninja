@@ -1,35 +1,14 @@
-import { Box, ChakraProvider, extendTheme, Link } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import { trackPagesRouter } from "@socialgouv/matomo-next";
 import { Analytics } from "@vercel/analytics/react";
 import AppHeader from "components/AppHeader";
+import { Provider } from "components/ui/provider";
+import { Toaster } from "components/ui/toaster";
 import { socket, SocketContext } from "context/SocketContext";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import NextLink from "next/link";
 import { useEffect } from "react";
-
-const theme = extendTheme({
-  components: {
-    Link: {
-      baseStyle: {
-        textDecoration: "underline",
-      },
-    },
-  },
-  colors: {
-    brand: {
-      200: "#fb8c00",
-      400: "#ffa726",
-      500: "#fb8c00",
-      600: "#ef6c00",
-      700: "#f57c00",
-      800: "#ef6c00",
-    },
-  },
-  config: {
-    useSystemColorMode: true,
-  },
-});
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -37,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ChakraProvider theme={theme}>
+    <Provider>
       <SocketContext.Provider value={socket}>
         <DefaultSeo
           title="Clipboard.ninja - Quick and secure way to share text, urls, snippets, passwords, etc. between devices"
@@ -76,6 +55,8 @@ export default function App({ Component, pageProps }: AppProps) {
             as={NextLink}
             target="_blank"
             rel="noopener noreferrer"
+            color="inherit"
+            textDecoration="underline"
           >
             Privacy Policy
           </Link>{" "}
@@ -85,6 +66,8 @@ export default function App({ Component, pageProps }: AppProps) {
             as={NextLink}
             target="_blank"
             rel="noopener noreferrer"
+            color="inherit"
+            textDecoration="underline"
           >
             Source on GitHub
           </Link>{" "}
@@ -94,12 +77,15 @@ export default function App({ Component, pageProps }: AppProps) {
             as={NextLink}
             target="_blank"
             rel="noopener noreferrer"
+            color="inherit"
+            textDecoration="underline"
           >
             Tim de Pater
           </Link>
         </Box>
         <Analytics />
+        <Toaster />
       </SocketContext.Provider>
-    </ChakraProvider>
+    </Provider>
   );
 }

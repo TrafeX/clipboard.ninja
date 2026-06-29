@@ -4,19 +4,14 @@ import {
   Flex,
   Heading,
   NumberInput,
-  NumberInputField,
   SimpleGrid,
   Spinner,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
   const [roomNumber, setRoomNumber] = useState("");
-
-  const subtextColor = useColorModeValue("gray.600", "gray.400");
-  const inputColor = useColorModeValue("gray.500", "gray.500");
 
   const handleConnectToRoom = (event) => {
     event.preventDefault();
@@ -42,7 +37,7 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
           <Heading as="h3" size="sm" mb={2}>
             This Device ID
           </Heading>
-          <Text fontSize={"sm"} color={subtextColor}>
+          <Text fontSize={"sm"} color={"fg.muted"}>
             Enter this Device ID on the other device to connect.
           </Text>
 
@@ -61,25 +56,25 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
           <Heading as="h3" size="sm" mb={2}>
             Connect to another device
           </Heading>
-          <Text fontSize={"sm"} color={subtextColor}>
+          <Text fontSize={"sm"} color={"fg.muted"}>
             Enter the Device ID of the other device below.
           </Text>
           <form onSubmit={handleConnectToRoom}>
             <Flex mt={"10px"}>
               <Flex direction={"column"} align="left" maxW="320">
                 {/* <FormLabel htmlFor="roomNr">Enter number</FormLabel> */}
-                <NumberInput
+                <NumberInput.Root
                   name="roomNr"
                   defaultValue={roomNumber}
-                  isDisabled={ownRoomNumber === null}
+                  disabled={ownRoomNumber === null}
                 >
-                  <NumberInputField
+                  <NumberInput.Input
                     onChange={handleChange}
                     _placeholder={{ color: "gray.500" }}
-                    borderColor={inputColor}
+                    borderColor={"gray.500"}
                     placeholder={"Enter Device ID"}
                   />
-                </NumberInput>
+                </NumberInput.Root>
                 {/* <Flex>
                   <PinInput name="roomNr" defaultValue={roomNumber} disabled={ownRoomNumber === null}>
                     <PinInputField />
@@ -94,8 +89,8 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
               </Flex>
               <Button
                 type="submit"
-                label="Connect"
-                colorScheme={"brand"}
+                colorPalette={"brand"}
+                fontSize="md"
                 alignSelf="flex-end"
                 mx={2}
                 disabled={roomNumber === null}
