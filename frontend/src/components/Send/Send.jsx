@@ -1,20 +1,9 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Text,
-  Textarea,
-  useColorModeValue,
-  Icon,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Icon, Text, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import { IoBulbOutline } from "react-icons/io5";
 
 const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
   const [message, setMessage] = useState("");
-
-  const subtextColor = useColorModeValue("gray.600", "gray.400");
 
   const sendThisMessage = () => {
     sendMessage(message);
@@ -35,7 +24,7 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
         <Heading as="h3" size="sm" mb={2}>
           Connected to Device
         </Heading>
-        <Text fontSize={"sm"} color={subtextColor}>
+        <Text fontSize={"sm"} color={"fg.muted"}>
           You are connected to the other {usersInRoom > 2 ? `${usersInRoom-1} devices` : 'device'} and can send text.
         </Text>
         <Text fontSize={"2xl"} fontWeight={"extrabold"} color={"brand.800"}>
@@ -50,18 +39,20 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
         />
         <Button
           type="submit"
-          label="Send"
-          colorScheme={"brand"}
+          colorPalette={"brand"}
+          fontSize="md"
           alignSelf="flex-start"
           my={2}
           onClick={() => sendThisMessage()}
-          isDisabled={message.length === 0}
+          disabled={message.length === 0}
         >
           Send
         </Button>
       </Flex>
-      <Text mt={2} fontSize={"sm"} color={subtextColor}>
-        <Icon as={IoBulbOutline} />
+      <Text mt={2} fontSize={"sm"} color={"fg.muted"}>
+        <Icon>
+          <IoBulbOutline />
+        </Icon>
         It&apos;s possible to send to multiple devices by also connecting them
         to the Device ID above.
       </Text>
