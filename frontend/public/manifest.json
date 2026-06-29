@@ -7,7 +7,7 @@
   "orientation": "portrait",
   "background_color": "#fff",
   "theme_color": "#ef6c00",
-  "description": "Real-time clipboard to quickly and securely share text between different (mobile) devices",
+  "description": "Instantly and securely send text, links and snippets between your phone, tablet and computer. Pair two devices with a 6-digit Device ID. No account, nothing stored.",
   "icons": [{
     "src": "/img/ninja16.png",
     "sizes": "16x16",

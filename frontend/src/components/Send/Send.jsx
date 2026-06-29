@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Icon, Text, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import { IoBulbOutline } from "react-icons/io5";
+import DeviceId from "../DeviceId";
 
 const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
   const [message, setMessage] = useState("");
@@ -27,9 +28,7 @@ const Send = ({ sendMessage, connectedToRoom, usersInRoom }) => {
         <Text fontSize={"sm"} color={"fg.muted"}>
           You are connected to the other {usersInRoom > 2 ? `${usersInRoom-1} devices` : 'device'} and can send text.
         </Text>
-        <Text fontSize={"2xl"} fontWeight={"extrabold"} color={"brand.800"}>
-          {connectedToRoom}
-        </Text>
+        <DeviceId value={connectedToRoom} />
       </Box>
       <Flex py={2} direction="column">
         <Textarea

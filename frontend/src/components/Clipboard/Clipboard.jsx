@@ -30,8 +30,8 @@ const Clipboard = ({
         <Card.Header pb={{ base: 0, lg: 1 }}>
           <Heading size="md">Connect & send</Heading>
           <Text fontSize={"sm"}>
-            Open this app on both devices and connect to the other device by
-            entering the Device ID
+            Open this app on both devices. On one device, enter the other
+            device&apos;s ID to connect, then send text instantly.
           </Text>
         </Card.Header>
         <Card.Body>

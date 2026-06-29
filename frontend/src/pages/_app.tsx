@@ -19,17 +19,16 @@ export default function App({ Component, pageProps }: AppProps) {
     <Provider>
       <SocketContext.Provider value={socket}>
         <DefaultSeo
-          title="Clipboard.ninja - Quick and secure way to share text, urls, snippets, passwords, etc. between devices"
-          description="Realtime clipboard to quickly and securely share text between different (mobile) devices"
+          title="Clipboard.ninja - Instantly share text between devices"
+          description="Instantly and securely send text, links and snippets between your phone, tablet and computer. Pair two devices with a 6-digit Device ID. No account, nothing stored."
           themeColor="#ef6c00"
           openGraph={{
             type: "website",
             url: "https://clipboard.ninja",
             siteName: "Clipboard.ninja",
-            title:
-              "Clipboard.ninja - Quick and secure way to share text between devices",
+            title: "Clipboard.ninja - Instantly share text between devices",
             description:
-              "Realtime clipboard to quickly and securely share text between different (mobile) devices",
+              "Instantly and securely send text, links and snippets between your phone, tablet and computer. Pair two devices with a 6-digit Device ID. No account, nothing stored.",
             locale: "en_US",
             images: [
               {
