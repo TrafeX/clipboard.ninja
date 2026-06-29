@@ -1,7 +1,8 @@
 import Clipboard from "components/Clipboard";
 import { SocketContext } from "context/SocketContext";
 import useSocketClient from "hooks/useSocketClient";
-import { NextSeo } from "next-seo";
+import { siteUrl } from "lib/faq";
+import { NextSeo, SoftwareAppJsonLd } from "next-seo";
 import { useContext } from "react";
 
 export default function Home() {
@@ -10,7 +11,14 @@ export default function Home() {
   const { ownRoomNumber, connectedToRoom, usersInRoom, messages } = useSocketClient(socket);
   return (
     <>
-      <NextSeo canonical="https://clipboard.ninja" />
+      <NextSeo canonical={siteUrl} />
+      <SoftwareAppJsonLd
+        name="Clipboard.ninja"
+        price="0"
+        priceCurrency="EUR"
+        applicationCategory="UtilitiesApplication"
+        operatingSystem="Any"
+      />
       <Clipboard
         ownRoomNumber={ownRoomNumber}
         connectedToRoom={connectedToRoom}

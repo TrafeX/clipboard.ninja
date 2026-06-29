@@ -1,53 +1,26 @@
-import { Card, Heading, Link, List, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Card, Heading, List, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { faqItems } from "lib/faq";
 
 const About = () => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={8} padding={8}>
       <Card.Root boxShadow={"lg"} p={{ sm: 3, md: 5 }} rounded={"md"}>
         <Card.Header pb={{ base: 0, lg: 1 }}>
-          <Heading size="md">How to use</Heading>
+          <Heading size="md">Frequently asked questions</Heading>
         </Card.Header>
         <Card.Body>
-          <List.Root as="ul" ps={5}>
-            <List.Item>
-              <Text>
-                Open the{" "}
-                <Link
-                  href="https://play.google.com/store/apps/details?id=nl.trafex.apps.clipboardninja"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  textDecoration="underline"
-                >
-                  app
-                </Link>{" "}
-                or{" "}
-                <Link
-                  href="https://clipboard.ninja"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  textDecoration="underline"
-                >
-                  website
-                </Link>{" "}
-                on both devices
-              </Text>
-            </List.Item>
-
-            <List.Item>
-              <Text>
-                Enter the device ID from the other device and press connect
-              </Text>
-            </List.Item>
-            <List.Item>
-              <Text>Type or paste the text you want to send</Text>
-            </List.Item>
-            <List.Item>
-              <Text>
-                See the text immediately appear on the other device after
-                pressing &apos;send&apos;
-              </Text>
-            </List.Item>
-          </List.Root>
+          <Stack gap={5}>
+            {faqItems.map((item) => (
+              <Box key={item.question}>
+                <Heading as="h3" size="sm" mb={1}>
+                  {item.question}
+                </Heading>
+                <Text fontSize="sm" color="fg.muted">
+                  {item.answer}
+                </Text>
+              </Box>
+            ))}
+          </Stack>
         </Card.Body>
       </Card.Root>
       <Card.Root boxShadow={"lg"} p={{ sm: 3, md: 5 }} rounded={"md"}>

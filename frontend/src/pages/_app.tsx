@@ -22,6 +22,27 @@ export default function App({ Component, pageProps }: AppProps) {
           title="Clipboard.ninja - Quick and secure way to share text, urls, snippets, passwords, etc. between devices"
           description="Realtime clipboard to quickly and securely share text between different (mobile) devices"
           themeColor="#ef6c00"
+          openGraph={{
+            type: "website",
+            url: "https://clipboard.ninja",
+            siteName: "Clipboard.ninja",
+            title:
+              "Clipboard.ninja - Quick and secure way to share text between devices",
+            description:
+              "Realtime clipboard to quickly and securely share text between different (mobile) devices",
+            locale: "en_US",
+            images: [
+              {
+                url: "https://clipboard.ninja/img/ninja512.png",
+                width: 512,
+                height: 512,
+                alt: "Clipboard.ninja",
+              },
+            ],
+          }}
+          twitter={{
+            cardType: "summary",
+          }}
           additionalLinkTags={[
             {
               rel: "manifest",
