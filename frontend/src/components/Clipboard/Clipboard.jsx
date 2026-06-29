@@ -47,7 +47,7 @@ const Clipboard = ({
           />
         </Card.Body>
       </Card.Root>
-      <Card.Root boxShadow={"lg"} p={5} rounded={"md"}>
+      <Card.Root boxShadow={"lg"} p={{ sm: 3, md: 5 }} rounded={"md"}>
         <Card.Header pb={{ base: 0, lg: 1 }}>
           <Heading size="md">Received text</Heading>
           <Text fontSize={"sm"}>

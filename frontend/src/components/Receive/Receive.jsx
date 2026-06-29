@@ -3,7 +3,7 @@ import { IoReturnDownForwardSharp } from "react-icons/io5";
 
 const Receive = ({ receivedMessages }) => (
   <Box>
-    <List.Root>
+    <List.Root listStyleType="none">
       {receivedMessages &&
         receivedMessages.map((message, i) => {
           return (
