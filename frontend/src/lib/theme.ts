@@ -75,6 +75,9 @@ const config = defineConfig({
           size: {
             sm: { textStyle: "md" },
             md: { textStyle: "xl" },
+            // One step above md so headings can scale up on larger screens
+            // (used via responsive size={{ base: "md", lg: "lg" }}).
+            lg: { textStyle: "2xl" },
           },
         },
       },

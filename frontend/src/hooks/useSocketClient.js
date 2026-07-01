@@ -75,7 +75,19 @@ const useSocketClient = (socket) => {
     };
   }, []);
 
-  return { ownRoomNumber, connectedToRoom, usersInRoom, messages };
+  // Leave the current room and start a fresh session. The backend has no
+  // "leave" event, so we drop the socket and reconnect: this unsubscribes us
+  // server-side and re-registers with a new Device ID.
+  const disconnect = () => {
+    setConnectedToRoom(null);
+    setUsersInRoom(0);
+    setMessages([]);
+    setOwnRoomNumber(null);
+    socket.disconnect();
+    socket.connect();
+  };
+
+  return { ownRoomNumber, connectedToRoom, usersInRoom, messages, disconnect };
 };
 
 export default useSocketClient;

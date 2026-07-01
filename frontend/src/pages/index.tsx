@@ -8,7 +8,8 @@ import { useContext } from "react";
 export default function Home() {
   const socket = useContext(SocketContext);
 
-  const { ownRoomNumber, connectedToRoom, usersInRoom, messages } = useSocketClient(socket);
+  const { ownRoomNumber, connectedToRoom, usersInRoom, messages, disconnect } =
+    useSocketClient(socket);
   return (
     <>
       <NextSeo canonical={siteUrl} />
@@ -24,6 +25,7 @@ export default function Home() {
         connectedToRoom={connectedToRoom}
         usersInRoom={usersInRoom}
         messages={messages}
+        disconnect={disconnect}
       />
     </>
   );

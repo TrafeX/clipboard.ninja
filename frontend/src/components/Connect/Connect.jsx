@@ -38,15 +38,15 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
       alignItems={"start"}
     >
       <Box>
-        <Heading as="h3" size="sm" mb={2}>
+        <Heading as="h3" size={{ base: "sm", lg: "md" }} mb={2}>
           This Device ID
         </Heading>
-        <Text fontSize={"sm"} color={"fg.muted"}>
+        <Text fontSize={{ base: "sm", lg: "md" }} color={"fg.muted"}>
           Share this ID with your other device so it can connect to you.
         </Text>
 
         {ownRoomNumber ? (
-          <DeviceId value={ownRoomNumber} />
+          <DeviceId value={ownRoomNumber} copyable />
         ) : (
           <Text fontSize={"md"} fontWeight={"extrabold"} color={"brand.800"}>
             Waiting for connection to server..
@@ -56,10 +56,10 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
       </Box>
 
       <Box>
-        <Heading as="h3" size="sm" mb={2}>
+        <Heading as="h3" size={{ base: "sm", lg: "md" }} mb={2}>
           Connect to another device
         </Heading>
-        <Text fontSize={"sm"} color={"fg.muted"}>
+        <Text fontSize={{ base: "sm", lg: "md" }} color={"fg.muted"}>
           Already have the other device&apos;s ID? Type it here and press
           Connect.
         </Text>
@@ -70,6 +70,7 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
                 name="roomNr"
                 defaultValue={roomNumber}
                 disabled={ownRoomNumber === null}
+                size={{ base: "md", lg: "lg" }}
               >
                 <NumberInput.Input
                   onChange={handleChange}
@@ -82,7 +83,7 @@ const Connect = ({ ownRoomNumber, connectedToRoom, connectToRoom }) => {
             <Button
               type="submit"
               colorPalette={"brand"}
-              fontSize="md"
+              fontSize={{ base: "md", lg: "lg" }}
               alignSelf="flex-end"
               mx={2}
               disabled={roomNumber === null}
