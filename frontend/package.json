@@ -35,9 +35,9 @@
     "@typescript-eslint/parser": "^8.49.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "npm-check-updates": "^22.2.7",
-    "prettier": "^3.8.4",
-    "vercel": "^54.15.0"
+    "npm-check-updates": "^22.2.9",
+    "prettier": "^3.9.3",
+    "vercel": "^54.18.3"
   },
   "overrides": {
     "@types/react": "19.2.17",
