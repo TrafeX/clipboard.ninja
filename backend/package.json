@@ -16,7 +16,7 @@
     "nodemon": "^3.1.14",
     "npm-check-updates": "^22.2.9",
     "prettier-eslint": "^16.4.2",
-    "prettier-eslint-cli": "^8.0.1",
+    "prettier-eslint-cli": "^9.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
