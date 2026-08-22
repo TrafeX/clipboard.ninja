@@ -1,6 +1,7 @@
 {
   "name": "clipboard.ninja",
   "version": "0.1.0",
+  "description": "Instantly and securely send text, links and snippets between your phone, tablet and computer. Pair two devices with a 6-digit Device ID. No account, nothing stored.",
   "private": true,
   "scripts": {
     "dev": "next dev",

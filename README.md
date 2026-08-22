@@ -11,11 +11,13 @@ See the [source of the Android app on GitHub](https://github.com/TrafeX/clipboar
 
 ## Features
 
- * It's realtime; you'll see the text immediately appear on the receiving device.
- * It's secure; the connection to the server is encrypted with SSL.
- * It's private; you first need to connect to the other device before you can send something, this way the data never has to be (temporarily) stored on the server. 
+ * It's real time; you'll see the text immediately appear on the receiving device.
+ * It's secure; the connection to the server runs over HTTPS, so all traffic is encrypted.
+ * It's private; text is relayed in real time and is never stored on the server. If you're not connected at the moment text is sent, it can't be retrieved afterwards.
  * You can connect with multiple devices, simultaneously receiving the text.
- * No registration is needed, a 6 digit number is enough to connect the devices.
+ * No registration is needed, a 6-digit Device ID is enough to connect the devices.
+ * It works with any device; iPhone, iPad, Windows, Mac, Linux and Chromebook all join through the browser.
+ * It's free and open source.
 
 ## Usage
 
