@@ -17,10 +17,10 @@
     "@socialgouv/matomo-next": "^1.14.2",
     "@types/node": "25.9.3",
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
+    "@types/react-dom": "19.2.7",
     "@vercel/analytics": "^2.0.1",
     "eslint-config-next": "16.0.10",
-    "next": "16.3.3",
+    "next": "16.3.4",
     "next-seo": "^6.8.0",
     "next-themes": "^0.4.6",
     "react": "19.2.8",
@@ -30,7 +30,7 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.6",
+    "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^9.39.2",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",
@@ -38,10 +38,10 @@
     "eslint-config-prettier": "^10.1.8",
     "npm-check-updates": "^23.1.0",
     "prettier": "^3.9.6",
-    "vercel": "^59.10.0"
+    "vercel": "^59.11.7"
   },
   "overrides": {
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5"
+    "@types/react-dom": "19.2.7"
   }
 }
